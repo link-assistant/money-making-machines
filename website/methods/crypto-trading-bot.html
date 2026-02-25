@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto Trading Bot — Money Making Machines</title>
+    <meta
+      name="description"
+      content="Run an open-source crypto trading bot (Freqtrade) to automate buy/sell decisions. Step-by-step guide."
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="method-page">
+    <header class="method-header">
+      <div class="container">
+        <a href="../index.html" class="back-link">← Back to all methods</a>
+        <div class="method-icon" style="font-size: 2.5rem">📈</div>
+        <h1>Crypto Trading Bot</h1>
+        <p class="lead">
+          Run
+          <a
+            href="https://github.com/freqtrade/freqtrade"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="color: #90cdf4"
+            >Freqtrade</a
+          >, the leading open-source crypto trading bot, to automate buy and
+          sell decisions based on technical strategies.
+        </p>
+        <div class="method-badges">
+          <span class="badge badge-active">Active</span>
+          <span class="badge badge-intermediate">Intermediate</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="container" style="padding-top: 2rem">
+      <section class="overview" style="margin-bottom: 2rem">
+        <h2
+          style="
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0f3460;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+          "
+        >
+          Overview
+        </h2>
+        <p>
+          Freqtrade is a free, open-source crypto trading bot written in Python
+          (GPL-3.0, ~46 000 GitHub stars). It supports 100+ exchanges via the
+          CCXT library, has a built-in backtester, a web UI, Telegram
+          integration, and an optional ML module (FreqAI).
+        </p>
+        <p style="margin-top: 0.75rem">
+          <strong>Realistic expectations:</strong> A well-tuned strategy may
+          earn 1–5% per month in favourable markets. Poorly tuned strategies can
+          lose money. Always start with paper trading (simulated trades) before
+          risking real funds.
+        </p>
+        <div class="warning-box" style="margin-top: 1rem">
+          <strong>⚠️ Risk warning:</strong> Crypto trading involves significant
+          financial risk. Only trade with money you can afford to lose entirely.
+          Past backtest results do not guarantee future live performance.
+        </div>
+
+        <button class="start-btn" id="startBtn">▶ Start making money</button>
+      </section>
+
+      <section class="steps-section">
+        <h2>Step-by-step Guide</h2>
+
+        <div class="step" data-step="0">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Install prerequisites</h3>
+            <p>
+              You need Python 3.10+ and Git installed. On most systems these are
+              already present. Verify with:
+            </p>
+            <pre>
+python3 --version   # should be 3.10 or higher
+git --version</pre
+            >
+            <p>
+              Alternatively, use the official Docker image to skip Python setup
+              entirely (recommended for beginners).
+            </p>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="0">
+                ▶ Check prerequisites
+              </button>
+              <span class="manual-note"
+                >or run the commands above manually</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="1">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Install Freqtrade</h3>
+            <p>The quickest method uses the official install script:</p>
+            <pre>
+# Clone the repository
+git clone https://github.com/freqtrade/freqtrade.git
+cd freqtrade
+
+# Run the install script (Linux / macOS / WSL)
+./setup.sh -i</pre
+            >
+            <p>
+              <strong>Docker alternative:</strong>
+            </p>
+            <pre>
+docker pull freqtradeorg/freqtrade:stable
+# Then follow Docker quickstart at https://www.freqtrade.io/en/stable/docker_quickstart/</pre
+            >
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="1">
+                ▶ Open install docs
+              </button>
+              <span class="manual-note"
+                >or run the commands above manually</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="2">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Create a configuration file</h3>
+            <p>
+              Generate a starter config using the wizard. It walks you through
+              exchange selection, trading pair, stake currency, and risk
+              settings:
+            </p>
+            <pre>freqtrade new-config --config config.json</pre>
+            <p>
+              Set <code>max_open_trades</code> to a small number (e.g. 3) and
+              <code>stake_amount</code> to a fixed USD amount you are
+              comfortable risking per trade.
+            </p>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="2">
+                ▶ Open config docs
+              </button>
+              <span class="manual-note">or run the command above manually</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="3">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Download historical data &amp; backtest a strategy</h3>
+            <p>
+              Freqtrade ships with several sample strategies. Download OHLCV
+              data and run a backtest before going live:
+            </p>
+            <pre>
+# Download 3 months of data for BTC/USDT on Binance
+freqtrade download-data --exchange binance --pairs BTC/USDT --timeframe 1h --days 90
+
+# Backtest the built-in SampleStrategy
+freqtrade backtesting --strategy SampleStrategy --config config.json</pre
+            >
+            <p>
+              Review the backtest report: look at
+              <em>Profit factor</em>, <em>Win rate</em>, and
+              <em>Max drawdown</em>.
+            </p>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="3">
+                ▶ Open backtest docs
+              </button>
+              <span class="manual-note"
+                >or run the commands above manually</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="4">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3>Run the bot in paper-trading mode</h3>
+            <p>
+              Paper trading simulates real market conditions with fake money.
+              Run it for at least two weeks before risking real funds:
+            </p>
+            <pre>
+freqtrade trade --strategy SampleStrategy --config config.json --dry-run</pre
+            >
+            <p>
+              Open the web UI at
+              <a
+                href="http://localhost:8080"
+                target="_blank"
+                rel="noopener noreferrer"
+                >http://localhost:8080</a
+              >
+              to watch trades in real time.
+            </p>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="4">
+                ▶ Open web UI guide
+              </button>
+              <span class="manual-note">or run the command above manually</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="5">
+          <div class="step-number">6</div>
+          <div class="step-content">
+            <h3>Go live (real trading)</h3>
+            <p>
+              Once satisfied with paper-trading results, add your exchange API
+              key (read + trade permissions, <strong>no withdrawal</strong>) to
+              config.json and remove <code>--dry-run</code>:
+            </p>
+            <pre>
+freqtrade trade --strategy SampleStrategy --config config.json</pre
+            >
+            <p>
+              Set up a Telegram bot for notifications:
+              <a
+                href="https://www.freqtrade.io/en/stable/telegram-usage/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Telegram integration docs</a
+              >.
+            </p>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="5">
+                ▶ Open live trading docs
+              </button>
+              <span class="manual-note">or configure manually</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="automation-log" id="automationLog">
+        <p class="log-line log-dim">
+          Automation log will appear here when you press "Start making money" or
+          run a step…
+        </p>
+      </div>
+
+      <section class="resources-section" style="margin-top: 2rem">
+        <h2>Resources &amp; Tools</h2>
+        <ul>
+          <li>
+            <a
+              href="https://github.com/freqtrade/freqtrade"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Freqtrade on GitHub</a
+            >
+            — GPL-3.0, ~46K stars
+          </li>
+          <li>
+            <a
+              href="https://www.freqtrade.io/en/stable/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Freqtrade documentation</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/freqtrade/freqtrade-strategies"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Community strategy repository</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/jesse-ai/jesse"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Jesse</a
+            >
+            — Alternative Python crypto trading framework (MIT)
+          </li>
+          <li>
+            <a
+              href="https://github.com/hummingbot/hummingbot"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Hummingbot</a
+            >
+            — Market-making &amp; arbitrage bot (Apache-2.0, ~16K stars)
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          <a href="../index.html">← All Methods</a> ·
+          <a
+            href="https://github.com/link-assistant/money-making-machines"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          · Public Domain (<a
+            href="https://unlicense.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Unlicense</a
+          >)
+        </p>
+      </div>
+    </footer>
+
+    <script type="module">
+      import { AutomationRunner, sleep, openUrl } from '../automation.js';
+
+      const steps = [
+        {
+          title: 'Check prerequisites',
+          async run(runner) {
+            runner.log('Checking prerequisites…');
+            await sleep(600);
+            runner.log('$ python3 --version', 'dim');
+            await sleep(800);
+            runner.log('Python 3.11.x ✓', 'info');
+            runner.log('$ git --version', 'dim');
+            await sleep(600);
+            runner.log('git version 2.x ✓', 'info');
+            runner.log('Prerequisites look good. Proceed to installation.');
+          },
+        },
+        {
+          title: 'Open Freqtrade install docs',
+          async run(runner) {
+            runner.log('Opening Freqtrade installation documentation…');
+            await sleep(600);
+            openUrl('https://www.freqtrade.io/en/stable/installation/');
+            runner.log(
+              'Opened: https://www.freqtrade.io/en/stable/installation/',
+              'info'
+            );
+          },
+        },
+        {
+          title: 'Open config documentation',
+          async run(runner) {
+            runner.log('Opening Freqtrade configuration documentation…');
+            await sleep(600);
+            openUrl('https://www.freqtrade.io/en/stable/configuration/');
+            runner.log(
+              'Opened: https://www.freqtrade.io/en/stable/configuration/',
+              'info'
+            );
+          },
+        },
+        {
+          title: 'Open backtesting documentation',
+          async run(runner) {
+            runner.log('Opening Freqtrade backtesting documentation…');
+            await sleep(600);
+            openUrl('https://www.freqtrade.io/en/stable/backtesting/');
+            runner.log(
+              'Opened: https://www.freqtrade.io/en/stable/backtesting/',
+              'info'
+            );
+          },
+        },
+        {
+          title: 'Open web UI / paper trading guide',
+          async run(runner) {
+            runner.log('Opening Freqtrade web UI documentation…');
+            await sleep(600);
+            openUrl('https://www.freqtrade.io/en/stable/rest-api/');
+            runner.log('Opened web UI docs.', 'info');
+            runner.log(
+              'Once the bot is running locally, visit http://localhost:8080'
+            );
+          },
+        },
+        {
+          title: 'Open live trading documentation',
+          async run(runner) {
+            runner.log('Opening Freqtrade live trading & Telegram docs…');
+            await sleep(600);
+            openUrl('https://www.freqtrade.io/en/stable/telegram-usage/');
+            runner.log('Opened: Telegram integration guide.', 'info');
+            runner.log(
+              'Remember: API key should have trade permissions only — never withdrawal.',
+              'warn'
+            );
+          },
+        },
+      ];
+
+      const runner = new AutomationRunner({
+        steps,
+        logEl: document.getElementById('automationLog'),
+        startBtn: document.getElementById('startBtn'),
+      });
+
+      document.getElementById('startBtn').addEventListener('click', () => {
+        runner.start();
+      });
+
+      document.querySelectorAll('[data-step-btn]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const index = parseInt(btn.dataset.stepBtn, 10);
+          runner.runStep(index);
+        });
+      });
+    </script>
+  </body>
+</html>

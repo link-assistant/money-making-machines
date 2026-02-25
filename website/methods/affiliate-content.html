@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Affiliate Content — Money Making Machines</title>
+    <meta
+      name="description"
+      content="Use AI tools to create SEO-optimised blog content with affiliate links that earn commissions."
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="method-page">
+    <header class="method-header">
+      <div class="container">
+        <a href="../index.html" class="back-link">← Back to all methods</a>
+        <div class="method-icon" style="font-size: 2.5rem">✍️</div>
+        <h1>Affiliate Content</h1>
+        <p class="lead">
+          Build a blog or niche site with AI-assisted content and earn
+          commissions every time a reader buys a product through your links.
+        </p>
+        <div class="method-badges">
+          <span class="badge badge-active">Active</span>
+          <span class="badge badge-intermediate">Intermediate</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="container" style="padding-top: 2rem">
+      <section class="overview" style="margin-bottom: 2rem">
+        <h2
+          style="
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0f3460;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+          "
+        >
+          Overview
+        </h2>
+        <p>
+          Affiliate marketing is one of the most scalable online income models.
+          You create helpful content (blog posts, comparison guides, tutorials)
+          and include affiliate links to products. When a reader clicks and
+          buys, you earn a commission — typically 3–10% for physical goods and
+          20–50% for digital products.
+        </p>
+        <p style="margin-top: 0.75rem">
+          AI writing tools dramatically reduce content creation time while
+          open-source static site generators (Hugo, Jekyll, Eleventy) give you a
+          free, fast website hosted on GitHub Pages.
+        </p>
+        <div class="warning-box" style="margin-top: 1rem">
+          <strong>⚠️ Disclosure requirement:</strong> Most jurisdictions and
+          affiliate programs (including Amazon Associates) require you to
+          clearly disclose that your links are affiliate links. This is both a
+          legal requirement and builds reader trust.
+        </div>
+
+        <button class="start-btn" id="startBtn">▶ Start making money</button>
+      </section>
+
+      <section class="steps-section">
+        <h2>Step-by-step Guide</h2>
+
+        <div class="step" data-step="0">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Choose a niche</h3>
+            <p>
+              Pick a topic you know something about that also has products
+              people buy online. The best niches have:
+            </p>
+            <ul style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.93rem">
+              <li>Products with decent commissions ($10+ per sale)</li>
+              <li>A clear audience with buying intent</li>
+              <li>
+                Enough sub-topics for 20–50 articles (e.g. "home espresso
+                machines", "budget hiking gear", "Python developer tools")
+              </li>
+            </ul>
+            <p>
+              Use Google Trends or
+              <a
+                href="https://ahrefs.com/keyword-generator"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Ahrefs free keyword generator</a
+              >
+              to validate search demand.
+            </p>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="0">
+                ▶ Open keyword tools
+              </button>
+              <span class="manual-note">or research keywords manually</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="1">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Join affiliate programs</h3>
+            <p>Apply to programs that cover your niche. Start with these:</p>
+            <ul style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.93rem">
+              <li>
+                <strong>Amazon Associates</strong>
+                (<a
+                  href="https://affiliate-program.amazon.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >affiliate-program.amazon.com</a
+                >) — 3–10%, covers almost every category
+              </li>
+              <li>
+                <strong>ShareASale / Impact / CJ Affiliate</strong> — networks
+                with thousands of merchants
+              </li>
+              <li>
+                <strong>Direct programs</strong> — many software companies pay
+                20–50% recurring commissions (e.g. Semrush, ConvertKit, Webflow)
+              </li>
+            </ul>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="1">
+                ▶ Open affiliate networks
+              </button>
+              <span class="manual-note">or sign up manually</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="2">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Set up a free website on GitHub Pages</h3>
+            <p>
+              A static site is free to host and fast to load. Use
+              <strong>Hugo</strong> (the most popular open-source static site
+              generator):
+            </p>
+            <pre>
+# Install Hugo (macOS/Linux via package manager, or download from gohugo.io)
+brew install hugo        # macOS with Homebrew
+# or: https://gohugo.io/installation/
+
+# Create new site
+hugo new site my-affiliate-blog
+cd my-affiliate-blog
+
+# Add a theme (e.g. PaperMod)
+git init
+git submodule add https://github.com/adityatelange/hugo-PaperMod themes/PaperMod
+echo 'theme = "PaperMod"' >> config.toml
+
+# Create your first post
+hugo new posts/my-first-review.md
+
+# Preview locally
+hugo server -D</pre
+            >
+            <p>
+              Push to GitHub and enable Pages in repository Settings → Pages →
+              Deploy from branch (main / docs).
+            </p>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="2">
+                ▶ Open Hugo quickstart
+              </button>
+              <span class="manual-note"
+                >or follow the commands above manually</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="3">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Write SEO-optimised content with AI assistance</h3>
+            <p>
+              AI tools (Claude, ChatGPT) can draft a first pass of an article in
+              minutes. Your job is to add real expertise, personal experience,
+              and up-to-date product data.
+            </p>
+            <p>Effective article types for affiliate income:</p>
+            <ul style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.93rem">
+              <li>"Best [product] for [use case]" — comparison posts</li>
+              <li>"[Product A] vs [Product B]" — head-to-head reviews</li>
+              <li>"How to [task] using [product]" — tutorial posts</li>
+              <li>"[Product] review" — detailed single product reviews</li>
+            </ul>
+            <p>
+              Target keywords with monthly search volume 100–2000 and low
+              difficulty (use
+              <a
+                href="https://ahrefs.com/keyword-generator"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Ahrefs free tool</a
+              >).
+            </p>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="3">
+                ▶ Open writing resources
+              </button>
+              <span class="manual-note">or write articles manually</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="4">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3>Insert affiliate links &amp; add disclosure</h3>
+            <p>
+              Replace plain product links with your tracked affiliate links. Add
+              a clear disclosure near the top of every article, for example:
+            </p>
+            <pre>
+&gt; **Affiliate disclosure:** Some links on this page are affiliate links.
+&gt; If you click through and make a purchase, I may earn a small commission
+&gt; at no extra cost to you.</pre
+            >
+            <p>
+              Use a link management plugin or simple markdown anchor tags if
+              using a static site.
+            </p>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="4">
+                ▶ Open FTC disclosure guide
+              </button>
+              <span class="manual-note">or add disclosure text manually</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="5">
+          <div class="step-number">6</div>
+          <div class="step-content">
+            <h3>Publish, track, &amp; iterate</h3>
+            <p>
+              Add Google Search Console (free) to track which pages get
+              impressions and clicks. After 3 months, identify your top
+              performing pages and write more on those topics.
+            </p>
+            <p>Typical timeline:</p>
+            <ul style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.93rem">
+              <li>Months 1–3: publish 20+ articles, little traffic</li>
+              <li>
+                Months 3–6: Google indexes and starts ranking, first commissions
+              </li>
+              <li>
+                Months 6–12: compounding traffic growth, $100–$500/month target
+              </li>
+            </ul>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="5">
+                ▶ Open Search Console
+              </button>
+              <span class="manual-note">or track manually</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="automation-log" id="automationLog">
+        <p class="log-line log-dim">
+          Automation log will appear here when you press "Start making money" or
+          run a step…
+        </p>
+      </div>
+
+      <section class="resources-section" style="margin-top: 2rem">
+        <h2>Resources &amp; Tools</h2>
+        <ul>
+          <li>
+            <a
+              href="https://gohugo.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Hugo</a
+            >
+            — Fast open-source static site generator (Apache-2.0)
+          </li>
+          <li>
+            <a
+              href="https://github.com/adityatelange/hugo-PaperMod"
+              target="_blank"
+              rel="noopener noreferrer"
+              >PaperMod Hugo theme</a
+            >
+            — Clean, fast theme for content sites (MIT)
+          </li>
+          <li>
+            <a
+              href="https://affiliate-program.amazon.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Amazon Associates</a
+            >
+            — Largest affiliate network
+          </li>
+          <li>
+            <a
+              href="https://www.shareasale.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >ShareASale</a
+            >
+            — Large affiliate marketplace
+          </li>
+          <li>
+            <a
+              href="https://ahrefs.com/keyword-generator"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Ahrefs free keyword generator</a
+            >
+            — Free SEO keyword research
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          <a href="../index.html">← All Methods</a> ·
+          <a
+            href="https://github.com/link-assistant/money-making-machines"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          · Public Domain (<a
+            href="https://unlicense.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Unlicense</a
+          >)
+        </p>
+      </div>
+    </footer>
+
+    <script type="module">
+      import { AutomationRunner, sleep, openUrl } from '../automation.js';
+
+      const steps = [
+        {
+          title: 'Open keyword research tools',
+          async run(runner) {
+            runner.log('Opening keyword research tools…');
+            await sleep(600);
+            openUrl('https://trends.google.com/trends/explore');
+            runner.log('Opened: Google Trends', 'info');
+            await sleep(400);
+            openUrl('https://ahrefs.com/keyword-generator');
+            runner.log('Opened: Ahrefs free keyword generator', 'info');
+          },
+        },
+        {
+          title: 'Open affiliate networks',
+          async run(runner) {
+            runner.log('Opening affiliate network sign-up pages…');
+            await sleep(600);
+            openUrl('https://affiliate-program.amazon.com');
+            runner.log('Opened: Amazon Associates', 'info');
+            await sleep(400);
+            openUrl('https://www.shareasale.com/merchants.cfm');
+            runner.log('Opened: ShareASale merchant directory', 'info');
+          },
+        },
+        {
+          title: 'Open Hugo quickstart documentation',
+          async run(runner) {
+            runner.log('Opening Hugo quickstart documentation…');
+            await sleep(600);
+            openUrl('https://gohugo.io/getting-started/quick-start/');
+            runner.log(
+              'Opened: https://gohugo.io/getting-started/quick-start/',
+              'info'
+            );
+          },
+        },
+        {
+          title: 'Open writing resources',
+          async run(runner) {
+            runner.log('Opening affiliate content writing resources…');
+            await sleep(600);
+            openUrl('https://ahrefs.com/blog/affiliate-marketing/');
+            runner.log('Opened: Ahrefs affiliate marketing guide', 'info');
+          },
+        },
+        {
+          title: 'Open FTC affiliate disclosure guidelines',
+          async run(runner) {
+            runner.log('Opening FTC disclosure guidelines for affiliates…');
+            await sleep(600);
+            openUrl(
+              'https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers'
+            );
+            runner.log('Opened: FTC Disclosures 101', 'info');
+            runner.log(
+              'Always include a clear affiliate disclosure near the top of your articles.',
+              'warn'
+            );
+          },
+        },
+        {
+          title: 'Open Google Search Console',
+          async run(runner) {
+            runner.log('Opening Google Search Console…');
+            await sleep(600);
+            openUrl('https://search.google.com/search-console/welcome');
+            runner.log(
+              'Opened: Google Search Console — add your site URL to start tracking.',
+              'info'
+            );
+          },
+        },
+      ];
+
+      const runner = new AutomationRunner({
+        steps,
+        logEl: document.getElementById('automationLog'),
+        startBtn: document.getElementById('startBtn'),
+      });
+
+      document.getElementById('startBtn').addEventListener('click', () => {
+        runner.start();
+      });
+
+      document.querySelectorAll('[data-step-btn]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const index = parseInt(btn.dataset.stepBtn, 10);
+          runner.runStep(index);
+        });
+      });
+    </script>
+  </body>
+</html>

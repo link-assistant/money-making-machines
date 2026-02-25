@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Microsoft Rewards — Money Making Machines</title>
+    <meta
+      name="description"
+      content="Automate daily Microsoft Rewards searches to earn points redeemable for gift cards and more."
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="method-page">
+    <header class="method-header">
+      <div class="container">
+        <a href="../index.html" class="back-link">← Back to all methods</a>
+        <div class="method-icon" style="font-size: 2.5rem">🎁</div>
+        <h1>Microsoft Rewards</h1>
+        <p class="lead">
+          Earn Microsoft Reward points by completing daily activities and Bing
+          searches, then redeem them for gift cards, Xbox credits, or PayPal
+          cash.
+        </p>
+        <div class="method-badges">
+          <span class="badge badge-passive">Passive</span>
+          <span class="badge badge-beginner">Beginner</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="container" style="padding-top: 2rem">
+      <section class="overview" style="margin-bottom: 2rem">
+        <h2
+          style="
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0f3460;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+          "
+        >
+          Overview
+        </h2>
+        <p>
+          Microsoft Rewards is an official Microsoft program. You earn points by
+          searching Bing, completing daily quizzes, and shopping at Microsoft
+          Store. Points are redeemable for Amazon/Xbox/Starbucks gift cards,
+          charitable donations, or PayPal cash.
+        </p>
+        <p style="margin-top: 0.75rem">
+          <strong>Realistic earnings:</strong> $5–$10/month per account in gift
+          card value with consistent daily activity. Fully automated with the
+          open-source
+          <a
+            href="https://github.com/farshadz1997/Microsoft-Rewards-bot"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Microsoft-Rewards-bot</a
+          >.
+        </p>
+        <div class="warning-box" style="margin-top: 1rem">
+          <strong>⚠️ Terms of Service:</strong> Microsoft Rewards ToS prohibits
+          automation. Using a bot risks account suspension. This guide describes
+          the manual process first; automation is described for educational
+          purposes. Use at your own risk.
+        </div>
+
+        <button class="start-btn" id="startBtn">▶ Start making money</button>
+      </section>
+
+      <section class="steps-section">
+        <h2>Step-by-step Guide</h2>
+
+        <div class="step" data-step="0">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Sign up for Microsoft Rewards</h3>
+            <p>
+              Microsoft Rewards is free. You need a Microsoft account (you may
+              already have one if you use Outlook, Xbox, or Windows).
+            </p>
+            <p>
+              Sign up at
+              <a
+                href="https://rewards.microsoft.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                >rewards.microsoft.com</a
+              >
+              and link it to your Bing searches by logging into Bing.
+            </p>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="0">
+                ▶ Open Microsoft Rewards
+              </button>
+              <span class="manual-note">or visit the site above manually</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="1">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Understand how points work</h3>
+            <p>The main ways to earn points:</p>
+            <ul style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.93rem">
+              <li>
+                <strong>PC searches:</strong> 3 points per search, up to 90
+                points/day (30 searches)
+              </li>
+              <li>
+                <strong>Mobile searches:</strong> 3 points per search, up to 60
+                points/day (20 searches)
+              </li>
+              <li>
+                <strong>Daily set activities:</strong> 10–45 points — quizzes,
+                polls, Microsoft News
+              </li>
+              <li>
+                <strong>Punch cards &amp; streaks:</strong> bonus points for
+                consecutive days
+              </li>
+            </ul>
+            <p>
+              <strong>Redemption rate:</strong> typically 1,300–1,500 points =
+              $1 gift card (varies by region and card type).
+            </p>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="1">
+                ▶ View rewards dashboard
+              </button>
+              <span class="manual-note">or log in to see your points</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="2">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Complete daily activities manually</h3>
+            <p>The fastest manual routine takes under 5 minutes per day:</p>
+            <ol style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.93rem">
+              <li>
+                Go to
+                <a
+                  href="https://rewards.microsoft.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >rewards.microsoft.com</a
+                >
+                and complete the "Daily Set" activities (quizzes, polls)
+              </li>
+              <li>
+                Open Bing and make 30 searches on PC (search random words, hit
+                enter)
+              </li>
+              <li>
+                Open the Microsoft Rewards app on your phone and make 20 mobile
+                searches
+              </li>
+            </ol>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="2">
+                ▶ Open Daily Set
+              </button>
+              <span class="manual-note"
+                >or do it manually following the steps above</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="3">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Optional: automate with Microsoft-Rewards-bot</h3>
+            <p>
+              The open-source
+              <a
+                href="https://github.com/farshadz1997/Microsoft-Rewards-bot"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Microsoft-Rewards-bot</a
+              >
+              (MIT) automates all daily activities using a headless browser. It
+              supports multiple accounts, Telegram notifications, and
+              scheduling.
+            </p>
+            <pre>
+# Install
+git clone https://github.com/farshadz1997/Microsoft-Rewards-bot.git
+cd Microsoft-Rewards-bot
+pip install -r requirements.txt
+
+# Configure
+cp accounts.json.example accounts.json
+# Edit accounts.json — add your Microsoft account email and password
+
+# Run (use --visible to watch the browser)
+python main.py</pre
+            >
+            <div class="warning-box">
+              <strong>⚠️ Risk:</strong> Automation may trigger Microsoft's bot
+              detection. Use a secondary Microsoft account, not your main one,
+              if you try this.
+            </div>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="3">
+                ▶ Open bot GitHub page
+              </button>
+              <span class="manual-note">or skip and do it manually</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="4">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3>Redeem points for gift cards</h3>
+            <p>
+              Once you reach the minimum threshold (usually 1,300–5,000 points
+              depending on the reward), go to the Rewards catalogue and redeem:
+            </p>
+            <ul style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.93rem">
+              <li>Amazon gift cards (US, UK, CA, DE…)</li>
+              <li>Starbucks, Target, Nike gift cards</li>
+              <li>Xbox Game Pass, Xbox credits</li>
+              <li>Charitable donations</li>
+              <li>Sweepstakes entries</li>
+            </ul>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="4">
+                ▶ Open rewards catalogue
+              </button>
+              <span class="manual-note"
+                >or browse manually at rewards.microsoft.com</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="automation-log" id="automationLog">
+        <p class="log-line log-dim">
+          Automation log will appear here when you press "Start making money" or
+          run a step…
+        </p>
+      </div>
+
+      <section class="resources-section" style="margin-top: 2rem">
+        <h2>Resources &amp; Tools</h2>
+        <ul>
+          <li>
+            <a
+              href="https://rewards.microsoft.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Microsoft Rewards official site</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/farshadz1997/Microsoft-Rewards-bot"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Microsoft-Rewards-bot</a
+            >
+            — Open source automation bot (MIT)
+          </li>
+          <li>
+            <a
+              href="https://github.com/charlesbel/Microsoft-Rewards-Farmer"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Microsoft-Rewards-Farmer</a
+            >
+            — Alternative bot with multi-account support
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          <a href="../index.html">← All Methods</a> ·
+          <a
+            href="https://github.com/link-assistant/money-making-machines"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          · Public Domain (<a
+            href="https://unlicense.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Unlicense</a
+          >)
+        </p>
+      </div>
+    </footer>
+
+    <script type="module">
+      import { AutomationRunner, sleep, openUrl } from '../automation.js';
+
+      const steps = [
+        {
+          title: 'Open Microsoft Rewards sign-up',
+          async run(runner) {
+            runner.log('Opening Microsoft Rewards…');
+            await sleep(600);
+            openUrl('https://rewards.microsoft.com');
+            runner.log('Opened: https://rewards.microsoft.com', 'info');
+            runner.log(
+              'Log in with your Microsoft account to activate Rewards.',
+              'dim'
+            );
+          },
+        },
+        {
+          title: 'View rewards dashboard',
+          async run(runner) {
+            runner.log('Opening rewards dashboard…');
+            await sleep(600);
+            openUrl('https://rewards.microsoft.com');
+            runner.log('Opened rewards dashboard.', 'info');
+            runner.log(
+              'Check your current point balance and daily earning progress.',
+              'dim'
+            );
+          },
+        },
+        {
+          title: 'Open Daily Set activities',
+          async run(runner) {
+            runner.log('Opening Microsoft Rewards Daily Set…');
+            await sleep(600);
+            openUrl('https://rewards.microsoft.com');
+            runner.log(
+              'Opened rewards homepage — complete the "Daily Set" section.',
+              'info'
+            );
+            await sleep(400);
+            openUrl('https://www.bing.com/search?q=random+word+1');
+            runner.log(
+              'Opened Bing for search activity. Make 30 searches to max PC points.',
+              'dim'
+            );
+          },
+        },
+        {
+          title: 'Open bot GitHub page',
+          async run(runner) {
+            runner.log('Opening Microsoft-Rewards-bot on GitHub…');
+            await sleep(600);
+            openUrl('https://github.com/farshadz1997/Microsoft-Rewards-bot');
+            runner.log('Opened: GitHub — Microsoft-Rewards-bot', 'info');
+            runner.log(
+              '⚠️  Remember: automation may violate ToS. Use a secondary account only.',
+              'warn'
+            );
+          },
+        },
+        {
+          title: 'Open rewards catalogue',
+          async run(runner) {
+            runner.log('Opening Microsoft Rewards catalogue…');
+            await sleep(600);
+            openUrl('https://rewards.microsoft.com/redeem');
+            runner.log('Opened: Rewards redemption catalogue.', 'info');
+            runner.log(
+              'Browse available gift cards and select one when you have enough points.',
+              'dim'
+            );
+          },
+        },
+      ];
+
+      const runner = new AutomationRunner({
+        steps,
+        logEl: document.getElementById('automationLog'),
+        startBtn: document.getElementById('startBtn'),
+      });
+
+      document.getElementById('startBtn').addEventListener('click', () => {
+        runner.start();
+      });
+
+      document.querySelectorAll('[data-step-btn]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const index = parseInt(btn.dataset.stepBtn, 10);
+          runner.runStep(index);
+        });
+      });
+    </script>
+  </body>
+</html>
