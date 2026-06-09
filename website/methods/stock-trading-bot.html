@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Trading Bot — Money Making Machines</title>
+    <meta
+      name="description"
+      content="Backtest and run algorithmic trading strategies on stocks using open-source tools like Backtrader and QuantConnect LEAN."
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="method-page">
+    <header class="method-header">
+      <div class="container">
+        <a href="../index.html" class="back-link">← Back to all methods</a>
+        <div class="method-icon" style="font-size: 2.5rem">🏦</div>
+        <h1>Stock Trading Bot</h1>
+        <p class="lead">
+          Develop, backtest, and run algorithmic trading strategies on stocks
+          using open-source Python frameworks — no expensive subscriptions
+          required.
+        </p>
+        <div class="method-badges">
+          <span class="badge badge-active">Active</span>
+          <span class="badge badge-advanced">Advanced</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="container" style="padding-top: 2rem">
+      <section class="overview" style="margin-bottom: 2rem">
+        <h2
+          style="
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0f3460;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+          "
+        >
+          Overview
+        </h2>
+        <p>
+          Algorithmic trading uses coded rules to execute buy and sell orders
+          automatically. The main open-source frameworks for stock trading are:
+        </p>
+        <ul style="margin: 0.75rem 0 0.75rem 1.5rem; font-size: 0.95rem">
+          <li>
+            <strong>Backtrader</strong> (GPL-3.0, ~22K stars) — still the most
+            popular Python backtesting/live-trading framework, but note its
+            original author stopped active development around 2018; it works
+            well and the community is large, yet it receives few updates
+          </li>
+          <li>
+            <strong>backtesting.py</strong> (AGPL-3.0, ~8K stars) — a lighter,
+            actively-maintained alternative to Backtrader with fast vectorised
+            backtests and built-in optimisation
+          </li>
+          <li>
+            <strong>NautilusTrader</strong> (LGPL-3.0, ~23K stars) — a modern,
+            high-performance, actively-developed platform for backtesting and
+            live algorithmic trading (Python + Rust core)
+          </li>
+          <li>
+            <strong>QuantConnect LEAN</strong> (Apache-2.0) — C#/Python engine
+            supporting stocks, futures, options, forex, and crypto on 50+ data
+            sources
+          </li>
+          <li>
+            <strong>Zipline-reloaded</strong> (Apache-2.0) — the maintained fork
+            of Quantopian's now-abandoned Zipline; Pandas-based event-driven
+            backtesting that integrates with Alpaca for live trading
+          </li>
+        </ul>
+        <div class="warning-box" style="margin-top: 1rem">
+          <strong>⚠️ Major risk warning:</strong> Stock trading carries the risk
+          of losing all invested capital. Overfitting in backtesting is
+          extremely common — a strategy that looks great on historical data may
+          lose money live. Never trade with money you cannot afford to lose.
+          This guide is educational only.
+        </div>
+
+        <button class="start-btn" id="startBtn">▶ Start making money</button>
+      </section>
+
+      <section class="steps-section">
+        <h2>Step-by-step Guide</h2>
+
+        <div class="step" data-step="0">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Choose a broker with a free API</h3>
+            <p>
+              You need a brokerage that provides a free programmatic API.
+              Commission-free options with good Python support:
+            </p>
+            <ul style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.93rem">
+              <li>
+                <strong>Alpaca</strong> —
+                <a
+                  href="https://alpaca.markets"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >alpaca.markets</a
+                >
+                — commission-free US stocks/ETFs, free paper trading API
+              </li>
+              <li>
+                <strong>Interactive Brokers</strong> —
+                <a
+                  href="https://www.interactivebrokers.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >interactivebrokers.com</a
+                >
+                — advanced, low fees, good API, requires minimum balance
+              </li>
+            </ul>
+            <p>
+              Start with Alpaca's paper trading (simulated) account — no real
+              money required.
+            </p>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="0">
+                ▶ Open Alpaca sign-up
+              </button>
+              <span class="manual-note">or choose a broker manually</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="1">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Install a backtesting framework</h3>
+            <p>
+              Backtrader is the most beginner-friendly Python framework and is
+              still widely used, even though it is no longer actively developed:
+            </p>
+            <pre>
+pip install backtrader
+pip install pandas yfinance matplotlib</pre
+            >
+            <p>
+              <code>yfinance</code> provides free historical stock data from
+              Yahoo Finance for backtesting.
+            </p>
+            <p>
+              Prefer something actively maintained? Swap in
+              <a
+                href="https://github.com/kernc/backtesting.py"
+                target="_blank"
+                rel="noopener noreferrer"
+                >backtesting.py</a
+              >
+              (<code>pip install backtesting</code>) for a lighter, faster API,
+              or
+              <a
+                href="https://github.com/nautechsystems/nautilus_trader"
+                target="_blank"
+                rel="noopener noreferrer"
+                >NautilusTrader</a
+              >
+              for a production-grade event-driven platform. The rest of this
+              guide uses Backtrader, but the workflow is the same in each.
+            </p>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="1">
+                ▶ Open Backtrader docs
+              </button>
+              <span class="manual-note"
+                >or run the commands above manually</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="2">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Write your first strategy</h3>
+            <p>
+              A simple moving average crossover strategy is the classic starting
+              point. Create <code>strategy.py</code>:
+            </p>
+            <pre>
+import backtrader as bt
+import yfinance as yf
+
+class SmaCross(bt.Strategy):
+    params = dict(fast=10, slow=30)
+
+    def __init__(self):
+        sma_fast = bt.ind.SMA(period=self.p.fast)
+        sma_slow = bt.ind.SMA(period=self.p.slow)
+        self.crossover = bt.ind.CrossOver(sma_fast, sma_slow)
+
+    def next(self):
+        if not self.position:
+            if self.crossover > 0:       # fast crosses above slow
+                self.buy()
+        elif self.crossover < 0:         # fast crosses below slow
+            self.sell()
+
+# Load data
+data_df = yf.download('AAPL', start='2020-01-01', end='2024-01-01')
+data = bt.feeds.PandasData(dataname=data_df)
+
+# Run backtest
+cerebro = bt.Cerebro()
+cerebro.addstrategy(SmaCross)
+cerebro.adddata(data)
+cerebro.broker.setcash(10000)
+cerebro.run()
+cerebro.plot()</pre
+            >
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="2">
+                ▶ Open strategy examples
+              </button>
+              <span class="manual-note">or write the code above manually</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="3">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Evaluate backtest results carefully</h3>
+            <p>Don't trust a single backtest. Healthy metrics to look for:</p>
+            <ul style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.93rem">
+              <li><strong>CAGR &gt; 15%/year</strong> (above buy-and-hold)</li>
+              <li>
+                <strong>Max drawdown &lt; 20%</strong> (how much you could lose
+                peak-to-trough)
+              </li>
+              <li>
+                <strong>Sharpe ratio &gt; 1.0</strong> (risk-adjusted return)
+              </li>
+              <li>
+                <strong>Out-of-sample test:</strong> hold out 20–30% of data and
+                test the strategy on data it never saw
+              </li>
+            </ul>
+            <p>
+              A strategy that only works on in-sample data is likely
+              over-fitted. Test across multiple time periods and multiple
+              tickers.
+            </p>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="3">
+                ▶ Open evaluation guide
+              </button>
+              <span class="manual-note">or evaluate manually</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="4">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3>Paper-trade for at least one month</h3>
+            <p>
+              Use Alpaca's paper trading API to run your strategy in real market
+              conditions with fake money. Install the Alpaca SDK:
+            </p>
+            <pre>
+pip install alpaca-py
+
+# In your strategy, replace the yfinance data feed with Alpaca's live feed
+# and use alpaca-py to submit orders — see Alpaca docs for examples</pre
+            >
+            <p>
+              Alpaca paper accounts start with a default $100,000 virtual
+              balance (configurable in the dashboard), so you can test
+              position-sizing realistically. Monitor real-time performance for
+              at least 20–30 trading days before committing real capital.
+            </p>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="4">
+                ▶ Open Alpaca paper trading docs
+              </button>
+              <span class="manual-note">or set up paper trading manually</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="5">
+          <div class="step-number">6</div>
+          <div class="step-content">
+            <h3>Go live with small capital</h3>
+            <p>
+              If paper trading is consistently profitable, switch to a live
+              Alpaca account. Start with a small amount (e.g., $500–$1000) —
+              enough to be meaningful but not enough to cause significant harm
+              if the strategy fails.
+            </p>
+            <p>
+              Set up alerts and monitoring so you know immediately if something
+              goes wrong (e.g., unexpected large trades, errors).
+            </p>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="5">
+                ▶ Open Alpaca live trading docs
+              </button>
+              <span class="manual-note">or configure manually</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="automation-log" id="automationLog">
+        <p class="log-line log-dim">
+          Automation log will appear here when you press "Start making money" or
+          run a step…
+        </p>
+      </div>
+
+      <section class="resources-section" style="margin-top: 2rem">
+        <h2>Resources &amp; Tools</h2>
+        <ul>
+          <li>
+            <a
+              href="https://github.com/mementum/backtrader"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Backtrader</a
+            >
+            — Python backtesting framework (GPL-3.0, ~22K stars; mature but no
+            longer actively developed)
+          </li>
+          <li>
+            <a
+              href="https://github.com/kernc/backtesting.py"
+              target="_blank"
+              rel="noopener noreferrer"
+              >backtesting.py</a
+            >
+            — Lightweight, actively-maintained backtesting library (AGPL-3.0,
+            ~8K stars)
+          </li>
+          <li>
+            <a
+              href="https://github.com/nautechsystems/nautilus_trader"
+              target="_blank"
+              rel="noopener noreferrer"
+              >NautilusTrader</a
+            >
+            — High-performance, actively-developed trading platform (LGPL-3.0,
+            ~23K stars)
+          </li>
+          <li>
+            <a
+              href="https://github.com/QuantConnect/Lean"
+              target="_blank"
+              rel="noopener noreferrer"
+              >QuantConnect LEAN</a
+            >
+            — Full algo trading engine (Apache-2.0)
+          </li>
+          <li>
+            <a
+              href="https://github.com/stefan-jansen/zipline-reloaded"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Zipline-reloaded</a
+            >
+            — Maintained fork of Zipline (Apache-2.0)
+          </li>
+          <li>
+            <a
+              href="https://docs.alpaca.markets/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Alpaca API docs</a
+            >
+            — Commission-free broker with a Python SDK
+          </li>
+          <li>
+            <a
+              href="https://github.com/wilsonfreitas/awesome-quant"
+              target="_blank"
+              rel="noopener noreferrer"
+              >awesome-quant</a
+            >
+            — Curated list of quantitative finance libraries
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          <a href="../index.html">← All Methods</a> ·
+          <a
+            href="https://github.com/link-assistant/money-making-machines"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          · Public Domain (<a
+            href="https://unlicense.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Unlicense</a
+          >)
+        </p>
+      </div>
+    </footer>
+
+    <script type="module">
+      import { AutomationRunner, sleep, openUrl } from '../automation.js';
+
+      const steps = [
+        {
+          title: 'Open Alpaca sign-up page',
+          async run(runner) {
+            runner.log('Opening Alpaca Markets sign-up page…');
+            await sleep(600);
+            openUrl('https://app.alpaca.markets/signup');
+            runner.log(
+              'Opened: Alpaca sign-up — create a free paper trading account.',
+              'info'
+            );
+          },
+        },
+        {
+          title: 'Open Backtrader documentation',
+          async run(runner) {
+            runner.log('Opening Backtrader documentation…');
+            await sleep(600);
+            openUrl('https://www.backtrader.com/docu/quickstart/quickstart/');
+            runner.log('Opened: Backtrader quickstart guide.', 'info');
+          },
+        },
+        {
+          title: 'Open Backtrader strategy examples',
+          async run(runner) {
+            runner.log('Opening Backtrader community strategy examples…');
+            await sleep(600);
+            openUrl(
+              'https://github.com/mementum/backtrader/tree/master/samples'
+            );
+            runner.log(
+              'Opened: Backtrader sample strategies on GitHub.',
+              'info'
+            );
+          },
+        },
+        {
+          title: 'Open strategy evaluation guide',
+          async run(runner) {
+            runner.log('Opening quantitative strategy evaluation resources…');
+            await sleep(600);
+            openUrl(
+              'https://www.quantconnect.com/docs/v2/writing-algorithms/key-concepts/algorithm-framework'
+            );
+            runner.log(
+              'Opened: QuantConnect algorithm framework docs.',
+              'info'
+            );
+            runner.log(
+              'Key metrics: CAGR, Sharpe ratio, max drawdown, win rate.',
+              'dim'
+            );
+          },
+        },
+        {
+          title: 'Open Alpaca paper trading documentation',
+          async run(runner) {
+            runner.log('Opening Alpaca paper trading documentation…');
+            await sleep(600);
+            openUrl('https://docs.alpaca.markets/docs/paper-trading');
+            runner.log('Opened: Alpaca paper trading guide.', 'info');
+          },
+        },
+        {
+          title: 'Open Alpaca live trading documentation',
+          async run(runner) {
+            runner.log('Opening Alpaca live trading documentation…');
+            await sleep(600);
+            openUrl('https://docs.alpaca.markets/docs/trading-api');
+            runner.log('Opened: Alpaca trading docs.', 'info');
+            runner.log(
+              '⚠️  Start with small capital ($500–$1000) when going live.',
+              'warn'
+            );
+          },
+        },
+      ];
+
+      const runner = new AutomationRunner({
+        steps,
+        logEl: document.getElementById('automationLog'),
+        startBtn: document.getElementById('startBtn'),
+      });
+
+      document.getElementById('startBtn').addEventListener('click', () => {
+        runner.start();
+      });
+
+      document.querySelectorAll('[data-step-btn]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const index = parseInt(btn.dataset.stepBtn, 10);
+          runner.runStep(index);
+        });
+      });
+    </script>
+  </body>
+</html>

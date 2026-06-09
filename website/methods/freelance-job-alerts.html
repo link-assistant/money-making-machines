@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Freelance Job Alerts — Money Making Machines</title>
+    <meta
+      name="description"
+      content="Automatically watch Upwork, Freelancer and other platforms for new jobs matching your skills."
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="method-page">
+    <header class="method-header">
+      <div class="container">
+        <a href="../index.html" class="back-link">← Back to all methods</a>
+        <div class="method-icon" style="font-size: 2.5rem">💼</div>
+        <h1>Freelance Job Alerts</h1>
+        <p class="lead">
+          Be the first to apply to new freelance jobs by automating alerts from
+          Upwork, Freelancer and PeoplePerHour — using each platform's built-in
+          saved-search notifications plus RSS where it still works. Respond
+          faster = win more contracts.
+        </p>
+        <div class="method-badges">
+          <span class="badge badge-active">Active</span>
+          <span class="badge badge-beginner">Beginner</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="container" style="padding-top: 2rem">
+      <section class="overview" style="margin-bottom: 2rem">
+        <h2
+          style="
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0f3460;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+          "
+        >
+          Overview
+        </h2>
+        <p>
+          Freelance platforms post new jobs every few minutes. The contractors
+          who respond within the first hour get hired far more often. This guide
+          sets up an alert system that notifies you the moment a matching job is
+          posted — using each platform's own saved-search notifications, the RSS
+          feeds that still work, and (optionally) managed monitoring services.
+        </p>
+        <div class="warning-box" style="margin-top: 1rem">
+          <strong>⚠️ RSS update (2024–2026):</strong> Upwork
+          <strong>discontinued its public job RSS feeds in August 2024</strong>
+          (the old <code>/ab/feed/jobs/rss</code> endpoint now returns
+          <code>410 Gone</code>). For Upwork you now rely on its built-in
+          <em>saved search</em> email/mobile alerts or a third-party service
+          (Vollna, GigRadar). Freelancer.com still publishes an RSS feed and
+          PeoplePerHour offers email alerts.
+        </div>
+        <p style="margin-top: 0.75rem">
+          <strong>Realistic expectations:</strong> This won't automate applying
+          or writing proposals (which would risk account bans). It gives you a
+          genuine competitive edge by ensuring you see every relevant job
+          instantly.
+        </p>
+        <div class="warning-box" style="margin-top: 1rem">
+          <strong>⚠️ ToS note:</strong> Reading public RSS feeds and using a
+          platform's own alert settings is always allowed. Automated proposal
+          submission or account creation violates most platform ToS. This guide
+          only automates the <em>notification</em> side.
+        </div>
+
+        <button class="start-btn" id="startBtn">▶ Start making money</button>
+      </section>
+
+      <section class="steps-section">
+        <h2>Step-by-step Guide</h2>
+
+        <div class="step" data-step="0">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Identify your keywords &amp; skills</h3>
+            <p>
+              Write down 5–10 search terms that describe the work you can do.
+              Examples: <code>react developer</code>,
+              <code>python automation</code>, <code>wordpress plugin</code>,
+              <code>logo design</code>.
+            </p>
+            <p>
+              Specific keywords get fewer but better-matched results. Broad
+              keywords get more noise. Start specific.
+            </p>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="0">
+                ▶ Open keyword planner
+              </button>
+              <span class="manual-note"
+                >or write your keywords in a text file</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="1">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Turn on each platform's native saved-search alerts</h3>
+            <p>
+              The most reliable, always-allowed alert source is each platform's
+              own saved-search notification — it survived every API/RSS change:
+            </p>
+            <ul style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.93rem">
+              <li>
+                <strong>Upwork:</strong> run a search with your keyword, click
+                <em>Save search</em>, then enable email and push notifications
+                in the mobile app. (Upwork's public RSS feed was retired in
+                2024, so this is now the primary route.)
+              </li>
+              <li>
+                <strong>Freelancer.com:</strong> still publishes an RSS feed of
+                the newest projects at
+                <code>https://www.freelancer.com/rss.xml</code> — and offers
+                per-skill email alerts in your account settings.
+              </li>
+              <li>
+                <strong>PeoplePerHour:</strong> set up an email alert from the
+                freelance-jobs search page for each keyword.
+              </li>
+            </ul>
+            <p>
+              Test the Freelancer RSS feed by opening the URL in a browser — you
+              should see XML with the newest projects. Filter it by keyword in
+              your RSS reader (next step).
+            </p>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="1">
+                ▶ Open Freelancer RSS feed
+              </button>
+              <span class="manual-note"
+                >or set up saved-search alerts manually</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="2">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Choose a notification method</h3>
+            <p>Pick one or more of these free options:</p>
+            <ul style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.93rem">
+              <li>
+                <strong>RSS reader with alerts</strong> — Feedly, Inoreader, or
+                the free
+                <a
+                  href="https://www.rssbotify.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >RSSnoti.fy</a
+                >
+                service sends an email on each new item
+              </li>
+              <li>
+                <strong>IFTTT / Make (formerly Integromat)</strong> — free plans
+                can monitor RSS and send push notifications or emails
+              </li>
+              <li>
+                <strong>Self-hosted n8n</strong> — open source workflow tool,
+                poll RSS every 5 minutes, send Telegram/Slack/email
+              </li>
+              <li>
+                <strong>GitHub Actions</strong> — free CI server that can poll
+                RSS on a schedule and email you
+              </li>
+              <li>
+                <strong>Managed Upwork monitors</strong> — because Upwork no
+                longer offers RSS, services like
+                <a
+                  href="https://www.vollna.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Vollna</a
+                >
+                and
+                <a
+                  href="https://gigradar.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >GigRadar</a
+                >
+                watch Upwork in near-real-time and push filtered alerts (free
+                tiers available)
+              </li>
+            </ul>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="2">
+                ▶ Open tool options
+              </button>
+              <span class="manual-note"
+                >or choose a tool from the list above</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="3">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Set up RSS-to-email with IFTTT (no code)</h3>
+            <p>
+              IFTTT is the easiest no-code option. Create an Applet:
+              <em>Trigger:</em> New item in RSS feed → <em>Action:</em> Send me
+              an email.
+            </p>
+            <ol style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.93rem">
+              <li>
+                Go to
+                <a
+                  href="https://ifttt.com/create"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >ifttt.com/create</a
+                >
+              </li>
+              <li>
+                Click <em>If This</em> → search "RSS Feed" → "New feed item"
+              </li>
+              <li>
+                Enter your Freelancer RSS URL
+                (<code>https://www.freelancer.com/rss.xml</code>) — add a
+                keyword filter in the applet if your reader supports it
+              </li>
+              <li>
+                Click <em>Then That</em> → search "Email" → "Send me an email"
+              </li>
+              <li>Save and enable the Applet</li>
+            </ol>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="3">
+                ▶ Open IFTTT create page
+              </button>
+              <span class="manual-note"
+                >or follow the steps above manually</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="4">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3>Respond fast &amp; write strong proposals</h3>
+            <p>
+              When you receive an alert, open the job immediately. A great
+              proposal:
+            </p>
+            <ul style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.93rem">
+              <li>
+                Starts with a specific reference to their project (not a
+                template)
+              </li>
+              <li>Shows 1–2 relevant past projects or skills</li>
+              <li>Ends with a clear next step ("I can start Monday")</li>
+              <li>Is under 200 words</li>
+            </ul>
+            <p>
+              AI tools like Claude or ChatGPT can help draft a first proposal
+              which you then personalise — cutting writing time from 20 minutes
+              to 5 minutes.
+            </p>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="4">
+                ▶ Open proposal tips
+              </button>
+              <span class="manual-note">or write your proposals manually</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="automation-log" id="automationLog">
+        <p class="log-line log-dim">
+          Automation log will appear here when you press "Start making money" or
+          run a step…
+        </p>
+      </div>
+
+      <section class="resources-section" style="margin-top: 2rem">
+        <h2>Resources &amp; Tools</h2>
+        <ul>
+          <li>
+            <a
+              href="https://www.vollna.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Vollna</a
+            >
+            and
+            <a
+              href="https://gigradar.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GigRadar</a
+            >
+            — managed Upwork monitors with instant filtered alerts (free tiers)
+          </li>
+          <li>
+            <a
+              href="https://ifttt.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >IFTTT</a
+            >
+            — No-code RSS-to-email automation (free plan available)
+          </li>
+          <li>
+            <a href="https://n8n.io" target="_blank" rel="noopener noreferrer"
+              >n8n</a
+            >
+            — Self-hostable workflow automation (source-available)
+          </li>
+          <li>
+            <a
+              href="https://github.com/calebmwelsh/Upwork-Job-Scraper"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Upwork Job Scraper</a
+            >
+            — Playwright-based scraper saving results to CSV/JSON
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          <a href="../index.html">← All Methods</a> ·
+          <a
+            href="https://github.com/link-assistant/money-making-machines"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          · Public Domain (<a
+            href="https://unlicense.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Unlicense</a
+          >)
+        </p>
+      </div>
+    </footer>
+
+    <script type="module">
+      import { AutomationRunner, sleep, openUrl } from '../automation.js';
+
+      const steps = [
+        {
+          title: 'Open keyword planning guide',
+          async run(runner) {
+            runner.log('Opening keyword research tips…');
+            await sleep(600);
+            openUrl('https://www.upwork.com/nx/search/jobs/');
+            runner.log(
+              'Opened Upwork job search — browse to discover common job titles.',
+              'info'
+            );
+            runner.log(
+              'Tip: Search broad terms first, note the most common keywords in job titles.',
+              'dim'
+            );
+          },
+        },
+        {
+          title: 'Preview the Freelancer RSS feed',
+          async run(runner) {
+            runner.log('Opening the Freelancer.com RSS feed…');
+            await sleep(600);
+            openUrl('https://www.freelancer.com/rss.xml');
+            runner.log(
+              'Opened: Freelancer RSS — you should see XML with the newest projects.',
+              'info'
+            );
+            runner.log(
+              'Note: Upwork retired its public RSS feed in 2024 — use its saved-search alerts instead.',
+              'warn'
+            );
+            await sleep(400);
+            openUrl('https://www.upwork.com/nx/find-work/');
+            runner.log(
+              'Opened Upwork job search — run a search, then click "Save search" and enable alerts.',
+              'dim'
+            );
+          },
+        },
+        {
+          title: 'Open automation tool options',
+          async run(runner) {
+            runner.log('Opening tool options for RSS monitoring…');
+            await sleep(600);
+            openUrl('https://ifttt.com/explore');
+            runner.log('Opened IFTTT.', 'info');
+            await sleep(400);
+            openUrl('https://n8n.io/workflows/');
+            runner.log('Opened n8n workflow library.', 'info');
+          },
+        },
+        {
+          title: 'Open IFTTT create page',
+          async run(runner) {
+            runner.log('Opening IFTTT Applet creator…');
+            await sleep(600);
+            openUrl('https://ifttt.com/create');
+            runner.log('Opened: https://ifttt.com/create', 'info');
+            runner.log(
+              'Follow the steps in the guide above to create your RSS → Email applet.',
+              'dim'
+            );
+          },
+        },
+        {
+          title: 'Open proposal writing tips',
+          async run(runner) {
+            runner.log('Opening Upwork proposal writing guide…');
+            await sleep(600);
+            openUrl(
+              'https://support.upwork.com/hc/en-us/articles/211062558-Write-a-Cover-Letter'
+            );
+            runner.log('Opened Upwork cover letter guide.', 'info');
+            runner.log(
+              'Tip: Keep proposals under 200 words and personalise the opening line.',
+              'dim'
+            );
+          },
+        },
+      ];
+
+      const runner = new AutomationRunner({
+        steps,
+        logEl: document.getElementById('automationLog'),
+        startBtn: document.getElementById('startBtn'),
+      });
+
+      document.getElementById('startBtn').addEventListener('click', () => {
+        runner.start();
+      });
+
+      document.querySelectorAll('[data-step-btn]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const index = parseInt(btn.dataset.stepBtn, 10);
+          runner.runStep(index);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -80,6 +80,27 @@ export default [
     },
   },
   {
+    // Browser-environment files (website)
+    files: ['website/**/*.js'],
+    languageOptions: {
+      globals: {
+        // Browser globals
+        document: 'readonly',
+        window: 'readonly',
+        setTimeout: 'readonly',
+        clearTimeout: 'readonly',
+        setInterval: 'readonly',
+        clearInterval: 'readonly',
+        HTMLElement: 'readonly',
+        Event: 'readonly',
+        CustomEvent: 'readonly',
+        Date: 'readonly',
+        Promise: 'readonly',
+        parseInt: 'readonly',
+      },
+    },
+  },
+  {
     ignores: [
       'node_modules/**',
       'coverage/**',
