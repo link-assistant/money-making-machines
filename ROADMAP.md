@@ -10,13 +10,17 @@ Machines**.
 - [x] Market research (`MARKET-RESEARCH.md`) — 50+ existing projects catalogued
       across 10 categories
 - [x] Static GitHub Pages website with shared CSS and JavaScript
-- [x] 6 initial method pages:
-  - [x] Bandwidth Sharing (Honeygain, EarnApp, Peer2Profit, PacketStream)
+- [x] 9 initial method pages:
+  - [x] Bandwidth Sharing (Honeygain, EarnApp, IPRoyal Pawns, Repocket,
+        PacketStream)
   - [x] Crypto Trading Bot (Freqtrade)
-  - [x] Freelance Job Alerts (RSS to email)
+  - [x] Freelance Job Alerts (saved-search alerts + RSS)
   - [x] Affiliate Content Site (Hugo + affiliate programs)
   - [x] Microsoft Rewards automation
   - [x] Stock Trading Bot (Backtrader + Alpaca)
+  - [x] AI Data Labeling & RLHF (DataAnnotation, Outlier, Mercor)
+  - [x] GPU & Compute Sharing (Salad, Vast.ai, io.net)
+  - [x] Digital Products & Print-on-Demand (Gumroad, Etsy, Printful, Printify)
 - [x] `AutomationRunner` ES module — shared step execution with timestamp logs
 - [x] GitHub Actions workflow — auto-deploy to GitHub Pages on push to `main`
 - [x] `MISSION.md`, `GOALS.md`, `ROADMAP.md`
@@ -25,14 +29,14 @@ Machines**.
 
 **Goal:** Grow the encyclopedia to 20+ documented methods.
 
-- [ ] Add 14+ new method pages to reach the 20-method target
+- [ ] Add 11+ new method pages to reach the 20-method target
+- [x] AI data labeling & RLHF (DataAnnotation, Outlier, Mercor)
+- [x] GPU & compute sharing (Salad, Vast.ai, io.net)
+- [x] Print-on-demand & digital products (Gumroad, Etsy, Printful, Printify)
 - [ ] Suggested new methods:
-  - [ ] Print-on-demand (Printful + Etsy integration)
-  - [ ] AI content writing for affiliate blogs
   - [ ] YouTube automation (scripting + TTS + auto-upload)
   - [ ] Dropshipping with automated order fulfillment
   - [ ] Domain flipping with automated valuation tools
-  - [ ] Selling digital products (Gumroad automation)
   - [ ] API arbitrage (price comparison + reselling)
   - [ ] Bug bounty hunting automation
   - [ ] Kindle Direct Publishing with AI-assisted writing

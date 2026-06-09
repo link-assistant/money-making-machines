@@ -46,7 +46,7 @@ Machines**.
 
 | Goal                           | Target                                    |
 | ------------------------------ | ----------------------------------------- |
-| Number of documented methods   | 20+ (starting with 6 in proof-of-concept) |
+| Number of documented methods   | 20+ (starting with 9 in proof-of-concept) |
 | In-browser automation coverage | 100% of documented methods                |
 | CI pass rate                   | 100% on all PRs                           |
 | License compliance             | 100% Unlicense on all original content    |

@@ -16,7 +16,10 @@ Market research for the **money-making-machines** project — an Unlicense (Publ
 8. [Similar Encyclopedias and Guides](#8-similar-encyclopedias-and-guides)
 9. [Workflow / General Automation Platforms](#9-workflow--general-automation-platforms)
 10. [Bandwidth Sharing Passive Income](#10-bandwidth-sharing-passive-income)
-11. [Key Takeaways and Gaps](#11-key-takeaways-and-gaps)
+11. [AI Data Labeling & RLHF](#11-ai-data-labeling--rlhf)
+12. [GPU & Compute Sharing](#12-gpu--compute-sharing)
+13. [Digital Products & Print-on-Demand](#13-digital-products--print-on-demand)
+14. [Key Takeaways and Gaps](#14-key-takeaways-and-gaps)
 
 ---
 
@@ -48,10 +51,10 @@ Open-source trading bots, arbitrage bots, yield farming tools, and market-making
 
 | Project                     | URL                                                         | License       | Stars | Description                                                                                                                                                                     |
 | --------------------------- | ----------------------------------------------------------- | ------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Freqtrade                   | https://github.com/freqtrade/freqtrade                      | GPL-3.0       | ~46K  | The most popular open-source crypto trading bot. Python. Supports all major exchanges via CCXT. Has backtesting, Telegram/WebUI control, and FreqAI (machine learning module).  |
+| Freqtrade                   | https://github.com/freqtrade/freqtrade                      | GPL-3.0       | ~51K  | The most popular open-source crypto trading bot. Python. Supports all major exchanges via CCXT. Has backtesting, Telegram/WebUI control, and FreqAI (machine learning module).  |
 | Jesse                       | https://github.com/jesse-ai/jesse                           | MIT           | ~7.3K | Advanced Python crypto trading framework focused on accuracy in backtesting, strategy optimization, and live trading. Has JesseGPT AI assistant for writing strategies.         |
 | OctoBot                     | https://github.com/Drakkar-Software/OctoBot                 | GPL-3.0       | ~5.1K | Modular Python trading robot supporting DCA, Grid, AI, and TradingView strategies. Serves 20,000+ users. Supports 15+ exchanges including Binance and Hyperliquid.              |
-| Hummingbot                  | https://github.com/hummingbot/hummingbot                    | Apache-2.0    | ~16K  | Open-source framework for high-frequency market-making and arbitrage on 140+ trading venues (CEX + DEX). $34B+ in user trading volume in the past year.                         |
+| Hummingbot                  | https://github.com/hummingbot/hummingbot                    | Apache-2.0    | ~19K  | Open-source framework for high-frequency market-making and arbitrage on 140+ trading venues (CEX + DEX). $34B+ in user trading volume in the past year.                         |
 | Superalgos                  | https://github.com/Superalgos/Superalgos                    | Apache-2.0    | ~4K   | Visual drag-and-drop crypto bot designer with integrated charting, data mining, backtesting, paper trading, and multi-server deployment. Community-driven with native SA token. |
 | defi-bot (ExtropyIO)        | https://github.com/ExtropyIO/defi-bot                       | Not specified | —     | Node.js DeFi arbitrage bot tutorial: fetches prices across DEXes, detects arbitrage, executes via flash loans on Uniswap forks. Educational reference.                          |
 | Defi-Trading-Arbitrage-Bot  | https://github.com/mcgraneder/Defi-Trading-Arbitrage-Bot    | Not specified | —     | Solidity + JS DeFi arbitrage bot using flash loans across Uniswap V2 forks (Sushiswap, Crowswap, Sakeswap).                                                                     |
@@ -168,16 +171,18 @@ Tools and techniques for maximizing ad revenue, header bidding, programmatic adv
 
 Open-source algorithmic trading frameworks for stocks, crypto, and other financial instruments.
 
-| Project           | URL                                         | License    | Stars | Language   | Description                                                                                                    |
-| ----------------- | ------------------------------------------- | ---------- | ----- | ---------- | -------------------------------------------------------------------------------------------------------------- |
-| Freqtrade         | https://github.com/freqtrade/freqtrade      | GPL-3.0    | ~46K  | Python     | Crypto-focused but also supports stock data. ML strategy optimization (FreqAI), backtesting, Telegram control. |
-| Jesse             | https://github.com/jesse-ai/jesse           | MIT        | ~7.3K | Python     | Clean crypto trading framework with emphasis on correct backtesting. JesseGPT AI helps write strategies.       |
-| Hummingbot        | https://github.com/hummingbot/hummingbot    | Apache-2.0 | ~16K  | Python     | Market-making and arbitrage bot for 140+ crypto exchanges (CEX + DEX).                                         |
-| Backtrader        | https://github.com/mementum/backtrader      | GPL-3.0    | ~20K  | Python     | General-purpose Python backtesting library for stocks and crypto. Clean API, local execution.                  |
-| QuantConnect LEAN | https://github.com/QuantConnect/Lean        | Apache-2.0 | ~9K   | C#/Python  | Full algorithmic trading engine supporting stocks, futures, options, crypto. Cloud and local.                  |
-| Zipline           | https://github.com/quantopian/zipline       | Apache-2.0 | ~17K  | Python     | Event-driven backtesting library originally from Quantopian (now community-maintained). Apache 2.0.            |
-| Superalgos        | https://github.com/Superalgos/Superalgos    | Apache-2.0 | ~4K   | JavaScript | Visual bot designer with charting, data mining, multi-server deployment.                                       |
-| OctoBot           | https://github.com/Drakkar-Software/OctoBot | GPL-3.0    | ~5.1K | Python     | Modular crypto bot with AI connectors, TradingView integration, 40+ built-in strategies.                       |
+| Project           | URL                                               | License    | Stars | Language    | Description                                                                                                                                               |
+| ----------------- | ------------------------------------------------- | ---------- | ----- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Freqtrade         | https://github.com/freqtrade/freqtrade            | GPL-3.0    | ~51K  | Python      | Crypto-focused but also supports stock data. ML strategy optimization (FreqAI), backtesting, Telegram control.                                            |
+| Jesse             | https://github.com/jesse-ai/jesse                 | MIT        | ~7.3K | Python      | Clean crypto trading framework with emphasis on correct backtesting. JesseGPT AI helps write strategies.                                                  |
+| Hummingbot        | https://github.com/hummingbot/hummingbot          | Apache-2.0 | ~19K  | Python      | Market-making and arbitrage bot for 140+ crypto exchanges (CEX + DEX).                                                                                    |
+| Backtrader        | https://github.com/mementum/backtrader            | GPL-3.0    | ~22K  | Python      | General-purpose Python backtesting library for stocks and crypto. Clean API, local execution. Author stopped active development ~2018; still widely used. |
+| backtesting.py    | https://github.com/kernc/backtesting.py           | AGPL-3.0   | ~8K   | Python      | Lightweight, fast backtesting framework; popular maintained alternative to Backtrader.                                                                    |
+| NautilusTrader    | https://github.com/nautechsystems/nautilus_trader | LGPL-3.0   | ~23K  | Python/Rust | High-performance algorithmic trading platform with event-driven backtesting and live trading.                                                             |
+| QuantConnect LEAN | https://github.com/QuantConnect/Lean              | Apache-2.0 | ~9K   | C#/Python   | Full algorithmic trading engine supporting stocks, futures, options, crypto. Cloud and local.                                                             |
+| Zipline-reloaded  | https://github.com/stefan-jansen/zipline-reloaded | Apache-2.0 | ~1.5K | Python      | Maintained fork of Quantopian's now-abandoned Zipline event-driven backtester.                                                                            |
+| Superalgos        | https://github.com/Superalgos/Superalgos          | Apache-2.0 | ~4K   | JavaScript  | Visual bot designer with charting, data mining, multi-server deployment.                                                                                  |
+| OctoBot           | https://github.com/Drakkar-Software/OctoBot       | GPL-3.0    | ~5.1K | Python      | Modular crypto bot with AI connectors, TradingView integration, 40+ built-in strategies.                                                                  |
 
 **Curated lists:**
 | Resource | URL | Description |
@@ -244,7 +249,67 @@ Docker stacks and tools for earning passive income by sharing unused internet ba
 
 ---
 
-## 11. Key Takeaways and Gaps
+## 11. AI Data Labeling & RLHF
+
+The AI training boom (2024–2026) created strong, ongoing demand for humans to produce and evaluate model-training data (RLHF — Reinforcement Learning from Human Feedback). Unlike old microtask/survey sites, these platforms pay competitively and prioritise specialised expertise.
+
+| Platform       | URL                             | Model                                                                       | Pay & payout                              |
+| -------------- | ------------------------------- | --------------------------------------------------------------------------- | ----------------------------------------- |
+| DataAnnotation | https://www.dataannotation.tech | Writing and reviewing AI training data; preference rating, response writing | Typically ~$15–$40+/hr; weekly PayPal     |
+| Outlier        | https://outlier.ai              | Expert RLHF projects (coding, STEM, languages); run by Scale AI             | Rate varies by project/skill tier; PayPal |
+| Mercor         | https://mercor.com              | Matches vetted experts to AI-training and interview-based gigs              | Project/hourly rates; varies by expertise |
+
+**Key patterns observed:**
+
+- Pay scales sharply with verified expertise (programming, math, law, medicine, non-English fluency).
+- Work is **active**, not passive, but offers flexible, self-scheduled hours.
+- Platforms continuously score accuracy; quality determines access to higher-paid queues.
+- Legitimate platforms never charge a fee to start — this is a common scam signal to flag in guides.
+- This is a genuinely current, high-demand category that did not meaningfully exist in earlier money-making encyclopedias.
+
+---
+
+## 12. GPU & Compute Sharing
+
+The AI compute shortage made spare GPU cycles a sellable commodity. Marketplaces let owners of gaming/workstation GPUs rent idle capacity to AI training, inference, and rendering workloads.
+
+| Platform | URL               | Model                                                          | Notes                                                       |
+| -------- | ----------------- | -------------------------------------------------------------- | ----------------------------------------------------------- |
+| Salad    | https://salad.com | Desktop app shares your GPU while idle; easiest for beginners  | Pays cash or rewards; sandboxed container workloads         |
+| Vast.ai  | https://vast.ai   | GPU-rental marketplace; you host and set your own hourly price | Higher earning potential, more setup (Docker + host client) |
+| io.net   | https://io.net    | Decentralised GPU network for AI workloads                     | Crypto payouts                                              |
+
+**Key patterns observed:**
+
+- Earnings depend heavily on hardware — a modern high-VRAM card (e.g. RTX 4090) can earn roughly **$50–$200+/month** when well-utilised; older/low-VRAM cards earn little.
+- **Electricity cost must be subtracted** — in high-cost regions it can erase the profit. This is the critical caveat for any honest guide.
+- Reputable platforms sandbox third-party jobs; users should never run untrusted code outside the official client.
+- Semi-passive: setup is one-time, then the client runs in the background with auto-start.
+
+---
+
+## 13. Digital Products & Print-on-Demand
+
+Create-once-sell-forever products where the platform automates delivery and payment. Two complementary models: digital downloads (near-zero marginal cost) and print-on-demand/POD (no inventory held).
+
+| Platform | URL                      | Model                                                               | Notes                                                     |
+| -------- | ------------------------ | ------------------------------------------------------------------- | --------------------------------------------------------- |
+| Gumroad  | https://gumroad.com      | Simplest digital-download storefront; instant automated delivery    | You own the customer relationship; flat + percentage fees |
+| Etsy     | https://www.etsy.com     | Marketplace with large built-in traffic for printables and POD      | Listing + transaction fees; strong organic discovery      |
+| Printful | https://www.printful.com | POD fulfilment connecting to Etsy/Shopify; prints & ships per order | No inventory; you keep margin over base cost              |
+| Printify | https://printify.com     | POD with a wide partner network, often lower base prices            | No inventory; connects to major marketplaces              |
+| Canva    | https://www.canva.com    | Free design tool for products and POD artwork                       | Export print-ready PNG/PDF                                |
+
+**Key patterns observed:**
+
+- Fulfilment (delivery, printing, shipping, payment) is **fully automated**; the upfront work is design and listing.
+- Getting **sales** still requires good designs, niche focus, and some marketing — listing alone is not income.
+- Copyright/trademark compliance is essential: POD platforms remove infringing listings and ban repeat offenders. Guides must stress original work.
+- A catalogue of many small earners compounds over time — a realistic scaling path.
+
+---
+
+## 14. Key Takeaways and Gaps
 
 ### What already exists:
 
@@ -260,16 +325,24 @@ Docker stacks and tools for earning passive income by sharing unused internet ba
 4. **Cross-category coverage under one roof** — Existing awesome lists link out to disparate projects. A unified encyclopedia with consistent page structure per method would be unique.
 5. **Transparent automation** — No existing project shows users exactly what each automation step does before executing it; this project's "replay step by step" concept is novel.
 
-### Recommended first encyclopedia entries (based on automation maturity):
+### Recommended encyclopedia entries (based on automation maturity and current relevance):
 
-1. **Microsoft Rewards automation** — Low risk, legitimate, well-documented, predictable income (~$5-10/month in gift cards).
-2. **Freqtrade crypto trading** — Most popular, best documented, GPL-3.0, large community.
-3. **YouTube automation** — High potential, multiple mature open-source tools available.
-4. **Bandwidth sharing (Honeygain/EarnApp)** — Zero-effort truly passive income; Docker makes it reproducible.
-5. **Prebid.js header bidding** — Legitimate ad revenue maximization for website owners.
+1. **AI data labeling & RLHF (DataAnnotation/Outlier/Mercor)** — Highest current demand; legitimate, competitive pay, beginner-accessible.
+2. **Bandwidth sharing (Honeygain/EarnApp/IPRoyal Pawns)** — Zero-effort truly passive income; Docker (money4band) makes it reproducible.
+3. **Digital products & print-on-demand (Gumroad/Etsy/Printful/Printify)** — Create-once, automated fulfilment forever; strong scaling path.
+4. **Freqtrade crypto trading** — Most popular, best documented, GPL-3.0, large community.
+5. **Microsoft Rewards automation** — Low income but legitimate and well-documented (automation is now higher-risk; manual is recommended).
+6. **GPU & compute sharing (Salad/Vast.ai/io.net)** — Monetises hardware you already own; semi-passive once configured.
+
+### Notes from the 2026-06 refresh (broken/changed since the original research):
+
+- **money4band** moved to the `MRColorR` GitHub namespace and now uses a guided Python setup (`python3 main.py`) rather than the older repo path.
+- **Upwork RSS job feeds** were retired (Aug 2024) — `/ab/feed/jobs/rss` now returns `410 Gone`. Per-keyword Freelancer feeds are likewise unreliable; guides pivoted to native saved-search alerts and managed monitors (Vollna, GigRadar).
+- Several **Microsoft Rewards bots** are dead: `farshadz1997/Microsoft-Rewards-Bot` is disabled and `charlesbel/Microsoft-Rewards-Bot` was archived (2024). `TheNetsky/Microsoft-Rewards-Script` (GPL-3.0, Playwright) is the actively-maintained option — but automation carries real account-ban risk.
+- Star counts grew: Freqtrade ~51K, Hummingbot ~19K, Backtrader ~22K (its author stopped active development ~2018). Zipline is now best used via the maintained `zipline-reloaded` fork.
 
 ---
 
-_Research conducted: 2026-02-24. All URLs verified as active at time of research._
+_Research originally conducted: 2026-02-24. Refreshed: 2026-06-09. All URLs verified as active at time of the refresh._
 
 _This document is released under the [Unlicense](LICENSE) — Public Domain._

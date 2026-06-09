@@ -140,3 +140,6 @@ vite.config.ts.timestamp-*
 
 # jscpd reports
 reports/
+
+# Playwright MCP browser artifacts (snapshots, console logs)
+.playwright-mcp/
