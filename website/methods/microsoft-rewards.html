@@ -49,21 +49,26 @@
           charitable donations, or PayPal cash.
         </p>
         <p style="margin-top: 0.75rem">
-          <strong>Realistic earnings:</strong> $5–$10/month per account in gift
-          card value with consistent daily activity. Fully automated with the
-          open-source
-          <a
-            href="https://github.com/farshadz1997/Microsoft-Rewards-bot"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Microsoft-Rewards-bot</a
-          >.
+          <strong>Realistic earnings:</strong> roughly $3–$7/month per account
+          in gift-card value with consistent daily activity. Microsoft has
+          trimmed several regional reward values and tightened anti-abuse
+          enforcement through 2025–2026, so treat this as pocket money, not a
+          serious income stream.
         </p>
         <div class="warning-box" style="margin-top: 1rem">
-          <strong>⚠️ Terms of Service:</strong> Microsoft Rewards ToS prohibits
-          automation. Using a bot risks account suspension. This guide describes
-          the manual process first; automation is described for educational
-          purposes. Use at your own risk.
+          <strong>⚠️ Automation is risky — do this manually.</strong> Microsoft
+          Rewards' Terms of Service explicitly prohibit automated searching, and
+          Microsoft has become far more aggressive at detecting it: accounts
+          caught farming are commonly <strong>permanently banned</strong> and
+          accrued points forfeited. The well-known older bots have already been
+          taken down or abandoned —
+          <code>farshadz1997/Microsoft-Rewards-bot</code> was disabled by
+          GitHub, and <code>charlesbel/Microsoft-Rewards-Farmer</code> was
+          archived in 2024. We
+          <strong>recommend the manual routine below</strong>
+          (it takes ~5 minutes a day). Any automation is described for
+          educational purposes only — use at your own risk on a throwaway
+          account, never your primary Microsoft account.
         </div>
 
         <button class="start-btn" id="startBtn">▶ Start making money</button>
@@ -174,36 +179,44 @@
         <div class="step" data-step="3">
           <div class="step-number">4</div>
           <div class="step-content">
-            <h3>Optional: automate with Microsoft-Rewards-bot</h3>
+            <h3>Optional (high risk): automation tools</h3>
             <p>
-              The open-source
+              The older Python bots that most guides point to are gone —
+              <code>farshadz1997/Microsoft-Rewards-bot</code> was disabled by
+              GitHub and <code>charlesbel/Microsoft-Rewards-Farmer</code> was
+              archived in 2024. The one project still actively maintained in
+              2026 is
               <a
-                href="https://github.com/farshadz1997/Microsoft-Rewards-bot"
+                href="https://github.com/TheNetsky/Microsoft-Rewards-Script"
                 target="_blank"
                 rel="noopener noreferrer"
-                >Microsoft-Rewards-bot</a
+                >TheNetsky/Microsoft-Rewards-Script</a
               >
-              (MIT) automates all daily activities using a headless browser. It
-              supports multiple accounts, Telegram notifications, and
-              scheduling.
+              (GPL-3.0, TypeScript + Playwright). It automates the daily set and
+              searches and supports multiple accounts and Telegram
+              notifications.
             </p>
             <pre>
-# Install
-git clone https://github.com/farshadz1997/Microsoft-Rewards-bot.git
-cd Microsoft-Rewards-bot
-pip install -r requirements.txt
+# Requires Node.js 18+ and Git
+git clone https://github.com/TheNetsky/Microsoft-Rewards-Script.git
+cd Microsoft-Rewards-Script
+npm install
+npx playwright install chromium
 
-# Configure
-cp accounts.json.example accounts.json
-# Edit accounts.json — add your Microsoft account email and password
+# Configure — copy the sample account/config files and add your details
+cp src/accounts.example.json src/accounts.json
+# Edit src/accounts.json and src/config.json
 
-# Run (use --visible to watch the browser)
-python main.py</pre
+# Build and run
+npm run build
+npm start</pre
             >
             <div class="warning-box">
-              <strong>⚠️ Risk:</strong> Automation may trigger Microsoft's bot
-              detection. Use a secondary Microsoft account, not your main one,
-              if you try this.
+              <strong>⚠️ Real ban risk:</strong> Microsoft actively detects
+              automated activity and permanently bans accounts caught farming,
+              forfeiting any accrued points. Only ever try this on a throwaway
+              account you don't care about — never your primary Microsoft
+              account. The manual routine in Step 3 carries no such risk.
             </div>
             <div class="step-actions">
               <button class="run-step-btn" data-step-btn="3">
@@ -261,21 +274,21 @@ python main.py</pre
           </li>
           <li>
             <a
-              href="https://github.com/farshadz1997/Microsoft-Rewards-bot"
+              href="https://github.com/TheNetsky/Microsoft-Rewards-Script"
               target="_blank"
               rel="noopener noreferrer"
-              >Microsoft-Rewards-bot</a
+              >TheNetsky/Microsoft-Rewards-Script</a
             >
-            — Open source automation bot (MIT)
+            — the actively-maintained automation script in 2026 (GPL-3.0,
+            TypeScript + Playwright). High ban risk — educational reference
+            only.
           </li>
           <li>
-            <a
-              href="https://github.com/charlesbel/Microsoft-Rewards-Farmer"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Microsoft-Rewards-Farmer</a
-            >
-            — Alternative bot with multi-account support
+            <em>Note:</em> the older
+            <code>farshadz1997/Microsoft-Rewards-bot</code>
+            (disabled by GitHub) and
+            <code>charlesbel/Microsoft-Rewards-Farmer</code> (archived 2024) no
+            longer work — avoid guides that still recommend them.
           </li>
         </ul>
       </section>
@@ -350,14 +363,17 @@ python main.py</pre
           },
         },
         {
-          title: 'Open bot GitHub page',
+          title: 'Open the maintained automation script (high risk)',
           async run(runner) {
-            runner.log('Opening Microsoft-Rewards-bot on GitHub…');
+            runner.log('Opening Microsoft-Rewards-Script on GitHub…');
             await sleep(600);
-            openUrl('https://github.com/farshadz1997/Microsoft-Rewards-bot');
-            runner.log('Opened: GitHub — Microsoft-Rewards-bot', 'info');
+            openUrl('https://github.com/TheNetsky/Microsoft-Rewards-Script');
             runner.log(
-              '⚠️  Remember: automation may violate ToS. Use a secondary account only.',
+              'Opened: GitHub — TheNetsky/Microsoft-Rewards-Script (GPL-3.0).',
+              'info'
+            );
+            runner.log(
+              '⚠️  Automation violates Microsoft Rewards ToS and risks a permanent ban. Use a throwaway account only — the manual routine is the safe choice.',
               'warn'
             );
           },

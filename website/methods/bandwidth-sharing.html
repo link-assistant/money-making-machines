@@ -99,7 +99,7 @@
                   rel="noopener noreferrer"
                   >honeygain.com</a
                 >
-                — most popular, $5 sign-up bonus
+                — most popular, $3 sign-up bonus, $20 minimum payout
               </li>
               <li>
                 <strong>EarnApp</strong> —
@@ -109,16 +109,27 @@
                   rel="noopener noreferrer"
                   >earnapp.com</a
                 >
-                — by BrightData (trusted company)
+                — by Bright Data (trusted company), $2.50 minimum payout
               </li>
               <li>
-                <strong>Peer2Profit</strong> —
+                <strong>IPRoyal Pawns</strong> —
                 <a
-                  href="https://peer2profit.com"
+                  href="https://iproyal.com/pawns"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >peer2profit.com</a
+                  >iproyal.com/pawns</a
                 >
+                — pays ~$0.20/GB, $5 minimum, PayPal/crypto
+              </li>
+              <li>
+                <strong>Repocket</strong> —
+                <a
+                  href="https://repocket.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >repocket.com</a
+                >
+                — newer service, ~$0.20/GB, $20 minimum
               </li>
               <li>
                 <strong>PacketStream</strong> —
@@ -128,7 +139,7 @@
                   rel="noopener noreferrer"
                   >packetstream.io</a
                 >
-                — $0.10/GB
+                — $0.10/GB, $5 minimum payout
               </li>
             </ul>
             <div class="step-actions">
@@ -150,23 +161,23 @@
               chose. Installation is straightforward — next, next, finish.
             </p>
             <p>
-              <strong>Docker users:</strong> All four services above have Docker
-              images. You can run them all at once using the open-source
+              <strong>Docker users:</strong> Most of these services have Docker
+              images. You can run several at once using the actively-maintained
+              open-source
               <a
-                href="https://github.com/NikolaiGulatz/money4band"
+                href="https://github.com/MRColorR/money4band"
                 target="_blank"
                 rel="noopener noreferrer"
                 >money4band</a
               >
-              compose stack.
+              stack (an interactive menu generates the compose file for you).
             </p>
             <pre>
-# money4band Docker stack (optional, Linux/macOS/Windows with Docker)
-git clone https://github.com/NikolaiGulatz/money4band.git
+# money4band (optional, Linux/macOS/Windows with Docker)
+git clone https://github.com/MRColorR/money4band.git
 cd money4band
-cp .env.example .env
-# Edit .env — add your account tokens for each service
-docker compose up -d</pre
+# Run the guided setup — it walks you through each service and token
+python3 main.py</pre
             >
             <div class="step-actions">
               <button class="run-step-btn" data-step-btn="2">
@@ -231,21 +242,13 @@ docker compose up -d</pre
         <ul>
           <li>
             <a
-              href="https://github.com/NikolaiGulatz/money4band"
+              href="https://github.com/MRColorR/money4band"
               target="_blank"
               rel="noopener noreferrer"
               >money4band</a
             >
-            — Docker compose stack for running multiple bandwidth apps at once
-          </li>
-          <li>
-            <a
-              href="https://github.com/MRColorR/money4band"
-              target="_blank"
-              rel="noopener noreferrer"
-              >money4band (MRColorR fork)</a
-            >
-            — Updated fork with more services
+            — actively-maintained open-source stack for running multiple
+            bandwidth apps at once (GPL-3.0)
           </li>
           <li>
             <a
@@ -261,10 +264,16 @@ docker compose up -d</pre
               >EarnApp</a
             >,
             <a
-              href="https://peer2profit.com"
+              href="https://iproyal.com/pawns"
               target="_blank"
               rel="noopener noreferrer"
-              >Peer2Profit</a
+              >IPRoyal Pawns</a
+            >,
+            <a
+              href="https://repocket.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Repocket</a
             >,
             <a
               href="https://packetstream.io"
@@ -387,7 +396,7 @@ docker compose up -d</pre
             );
             await sleep(600);
             runner.log(
-              'Minimum payout thresholds: Honeygain $20, EarnApp $2.50, Peer2Profit $2, PacketStream $1.'
+              'Minimum payout thresholds: Honeygain $20, EarnApp $2.50, IPRoyal Pawns $5, PacketStream $5.'
             );
           },
         },

@@ -48,8 +48,20 @@
         </p>
         <ul style="margin: 0.75rem 0 0.75rem 1.5rem; font-size: 0.95rem">
           <li>
-            <strong>Backtrader</strong> (GPL-3.0, ~20K stars) — Python
-            backtesting and live trading; supports Alpaca, Interactive Brokers
+            <strong>Backtrader</strong> (GPL-3.0, ~22K stars) — still the most
+            popular Python backtesting/live-trading framework, but note its
+            original author stopped active development around 2018; it works
+            well and the community is large, yet it receives few updates
+          </li>
+          <li>
+            <strong>backtesting.py</strong> (AGPL-3.0, ~8K stars) — a lighter,
+            actively-maintained alternative to Backtrader with fast vectorised
+            backtests and built-in optimisation
+          </li>
+          <li>
+            <strong>NautilusTrader</strong> (LGPL-3.0, ~23K stars) — a modern,
+            high-performance, actively-developed platform for backtesting and
+            live algorithmic trading (Python + Rust core)
           </li>
           <li>
             <strong>QuantConnect LEAN</strong> (Apache-2.0) — C#/Python engine
@@ -57,8 +69,9 @@
             sources
           </li>
           <li>
-            <strong>Zipline</strong> (Apache-2.0, ~17K stars) — Pandas-based
-            event-driven backtesting; integrates with Alpaca for live trading
+            <strong>Zipline-reloaded</strong> (Apache-2.0) — the maintained fork
+            of Quantopian's now-abandoned Zipline; Pandas-based event-driven
+            backtesting that integrates with Alpaca for live trading
           </li>
         </ul>
         <div class="warning-box" style="margin-top: 1rem">
@@ -121,8 +134,11 @@
         <div class="step" data-step="1">
           <div class="step-number">2</div>
           <div class="step-content">
-            <h3>Install Backtrader</h3>
-            <p>Backtrader is the most beginner-friendly Python framework:</p>
+            <h3>Install a backtesting framework</h3>
+            <p>
+              Backtrader is the most beginner-friendly Python framework and is
+              still widely used, even though it is no longer actively developed:
+            </p>
             <pre>
 pip install backtrader
 pip install pandas yfinance matplotlib</pre
@@ -130,6 +146,25 @@ pip install pandas yfinance matplotlib</pre
             <p>
               <code>yfinance</code> provides free historical stock data from
               Yahoo Finance for backtesting.
+            </p>
+            <p>
+              Prefer something actively maintained? Swap in
+              <a
+                href="https://github.com/kernc/backtesting.py"
+                target="_blank"
+                rel="noopener noreferrer"
+                >backtesting.py</a
+              >
+              (<code>pip install backtesting</code>) for a lighter, faster API,
+              or
+              <a
+                href="https://github.com/nautechsystems/nautilus_trader"
+                target="_blank"
+                rel="noopener noreferrer"
+                >NautilusTrader</a
+              >
+              for a production-grade event-driven platform. The rest of this
+              guide uses Backtrader, but the workflow is the same in each.
             </p>
             <div class="step-actions">
               <button class="run-step-btn" data-step-btn="1">
@@ -238,8 +273,10 @@ pip install alpaca-py
 # and use alpaca-py to submit orders — see Alpaca docs for examples</pre
             >
             <p>
-              Monitor real-time performance for at least 20–30 trading days
-              before committing real capital.
+              Alpaca paper accounts start with a default $100,000 virtual
+              balance (configurable in the dashboard), so you can test
+              position-sizing realistically. Monitor real-time performance for
+              at least 20–30 trading days before committing real capital.
             </p>
             <div class="step-actions">
               <button class="run-step-btn" data-step-btn="4">
@@ -291,7 +328,28 @@ pip install alpaca-py
               rel="noopener noreferrer"
               >Backtrader</a
             >
-            — Python backtesting framework (GPL-3.0, ~20K stars)
+            — Python backtesting framework (GPL-3.0, ~22K stars; mature but no
+            longer actively developed)
+          </li>
+          <li>
+            <a
+              href="https://github.com/kernc/backtesting.py"
+              target="_blank"
+              rel="noopener noreferrer"
+              >backtesting.py</a
+            >
+            — Lightweight, actively-maintained backtesting library (AGPL-3.0,
+            ~8K stars)
+          </li>
+          <li>
+            <a
+              href="https://github.com/nautechsystems/nautilus_trader"
+              target="_blank"
+              rel="noopener noreferrer"
+              >NautilusTrader</a
+            >
+            — High-performance, actively-developed trading platform (LGPL-3.0,
+            ~23K stars)
           </li>
           <li>
             <a
@@ -313,7 +371,7 @@ pip install alpaca-py
           </li>
           <li>
             <a
-              href="https://alpaca.markets/docs/"
+              href="https://docs.alpaca.markets/"
               target="_blank"
               rel="noopener noreferrer"
               >Alpaca API docs</a
@@ -415,7 +473,7 @@ pip install alpaca-py
           async run(runner) {
             runner.log('Opening Alpaca paper trading documentation…');
             await sleep(600);
-            openUrl('https://alpaca.markets/docs/trading/paper-trading/');
+            openUrl('https://docs.alpaca.markets/docs/paper-trading');
             runner.log('Opened: Alpaca paper trading guide.', 'info');
           },
         },
@@ -424,7 +482,7 @@ pip install alpaca-py
           async run(runner) {
             runner.log('Opening Alpaca live trading documentation…');
             await sleep(600);
-            openUrl('https://alpaca.markets/docs/trading/');
+            openUrl('https://docs.alpaca.markets/docs/trading-api');
             runner.log('Opened: Alpaca trading docs.', 'info');
             runner.log(
               '⚠️  Start with small capital ($500–$1000) when going live.',
