@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GPU &amp; Compute Sharing — Money Making Machines</title>
+    <meta
+      name="description"
+      content="Rent out your idle GPU and computer power to AI workloads on platforms like Vast.ai, Salad and io.net for passive income."
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="method-page">
+    <header class="method-header">
+      <div class="container">
+        <a href="../index.html" class="back-link">← Back to all methods</a>
+        <div class="method-icon" style="font-size: 2.5rem">🖥️</div>
+        <h1>GPU &amp; Compute Sharing</h1>
+        <p class="lead">
+          Rent out your idle graphics card and computer power to AI and
+          rendering workloads. If you already own a gaming PC, it can earn while
+          you sleep.
+        </p>
+        <div class="method-badges">
+          <span class="badge badge-passive">Passive</span>
+          <span class="badge badge-intermediate">Intermediate</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="container" style="padding-top: 2rem">
+      <section class="overview" style="margin-bottom: 2rem">
+        <h2
+          style="
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0f3460;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+          "
+        >
+          Overview
+        </h2>
+        <p>
+          The AI surge created a shortage of GPU compute. Marketplaces now let
+          you rent your spare GPU cycles to people training models, running
+          inference, or rendering video. You set the price (or accept the market
+          rate), and the platform handles matching, sandboxing, and payment.
+        </p>
+        <p style="margin-top: 0.75rem">
+          <strong>Realistic earnings:</strong> highly dependent on your
+          hardware. A modern high-VRAM card (e.g. an RTX 4090) can earn roughly
+          <strong>$50–$200+ per month</strong> when well-utilised; older or
+          low-VRAM cards earn much less. Always subtract your electricity cost
+          before counting profit.
+        </p>
+        <div class="warning-box" style="margin-top: 1rem">
+          <strong>⚠️ Read before you start:</strong> Running a GPU at full load
+          24/7 increases power use, heat, and wear. Check your local electricity
+          price — in high-cost regions this can wipe out the profit. You are
+          renting compute to strangers' workloads, so use platforms that sandbox
+          jobs and never run untrusted code outside their client.
+        </div>
+
+        <button class="start-btn" id="startBtn">▶ Start making money</button>
+      </section>
+
+      <section class="steps-section">
+        <h2>Step-by-step Guide</h2>
+
+        <div class="step" data-step="0">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Check your hardware &amp; electricity cost</h3>
+            <p>
+              This method only pays off with a reasonably capable GPU. Before
+              anything else:
+            </p>
+            <ul style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.93rem">
+              <li>
+                Identify your GPU model and VRAM (more VRAM = more rentable
+                jobs)
+              </li>
+              <li>
+                Find your electricity price per kWh and estimate your card's
+                power draw under load
+              </li>
+              <li>
+                Make sure your PC can stay on and online for long stretches
+              </li>
+            </ul>
+            <p>
+              <strong>Manual:</strong> On Windows, open Task Manager →
+              Performance → GPU. On Linux, run <code>nvidia-smi</code>.
+            </p>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="0">
+                ▶ Run this step
+              </button>
+              <span class="manual-note">or check it manually above</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="1">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Choose a compute marketplace</h3>
+            <p>
+              These are the established platforms paying GPU providers in 2026:
+            </p>
+            <ul style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.93rem">
+              <li>
+                <strong>Salad</strong> —
+                <a
+                  href="https://salad.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >salad.com</a
+                >
+                — easiest for beginners; a desktop app shares your GPU while
+                idle and pays in cash or rewards
+              </li>
+              <li>
+                <strong>Vast.ai</strong> —
+                <a
+                  href="https://vast.ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >vast.ai</a
+                >
+                — large GPU-rental marketplace; you host and set your own price
+                (higher earning potential, more setup)
+              </li>
+              <li>
+                <strong>io.net</strong> —
+                <a
+                  href="https://io.net"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >io.net</a
+                >
+                — decentralised GPU network for AI workloads; pays in crypto
+              </li>
+            </ul>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="1">
+                ▶ Open marketplace sites
+              </button>
+              <span class="manual-note">or visit the links above manually</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="2">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Create an account &amp; install the host client</h3>
+            <p>
+              Sign up, then install the provider/host client for your platform.
+              Salad is the simplest — install the desktop app, sign in, and it
+              starts earning when your PC is idle. Vast.ai requires installing
+              its host package and registering your machine:
+            </p>
+            <pre>
+# Vast.ai host setup (Linux example)
+# 1. Install Docker + NVIDIA Container Toolkit first
+# 2. Install the Vast host CLI
+curl -sSL https://console.vast.ai/install-vastai-host.sh | bash
+# 3. Register your machine (follow the printed instructions)
+vastai self-test</pre
+            >
+            <p>
+              <strong>Salad / io.net:</strong> just download the official
+              desktop client and sign in — no command line needed.
+            </p>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="2">
+                ▶ Open setup docs
+              </button>
+              <span class="manual-note"
+                >or follow the instructions above manually</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="3">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Set your price &amp; enable auto-start</h3>
+            <p>
+              On Vast.ai, set a competitive hourly price (the dashboard shows
+              what comparable GPUs charge). On Salad/io.net, the rate is set for
+              you. In every client, enable
+              <strong>"Launch at startup"</strong> so your machine rejoins the
+              pool automatically after a reboot.
+            </p>
+            <p>
+              Tip: schedule the client to run mainly when electricity is cheaper
+              or when you're not gaming, to keep the work genuinely passive.
+            </p>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="3">
+                ▶ Open pricing guide
+              </button>
+              <span class="manual-note"
+                >or configure manually in the client</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="4">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3>Monitor utilisation, temps &amp; payouts</h3>
+            <p>
+              Check your dashboard for utilisation (how often your GPU is
+              rented) and keep an eye on temperatures to avoid overheating.
+              Payout methods vary: Salad pays cash/rewards, Vast.ai pays to your
+              balance for withdrawal, and io.net pays in crypto. Withdraw once
+              you pass the minimum threshold.
+            </p>
+            <div class="step-actions">
+              <button class="run-step-btn" data-step-btn="4">
+                ▶ Open dashboards
+              </button>
+              <span class="manual-note"
+                >or log in to each platform manually</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="automation-log" id="automationLog">
+        <p class="log-line log-dim">
+          Automation log will appear here when you press "Start making money" or
+          run a step…
+        </p>
+      </div>
+
+      <section class="resources-section" style="margin-top: 2rem">
+        <h2>Resources &amp; Tools</h2>
+        <ul>
+          <li>
+            <a
+              href="https://salad.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Salad</a
+            >
+            — beginner-friendly desktop app that shares your idle GPU
+          </li>
+          <li>
+            <a href="https://vast.ai" target="_blank" rel="noopener noreferrer"
+              >Vast.ai</a
+            >
+            — GPU-rental marketplace where you set your own price
+          </li>
+          <li>
+            <a href="https://io.net" target="_blank" rel="noopener noreferrer"
+              >io.net</a
+            >
+            — decentralised GPU network for AI workloads (crypto payouts)
+          </li>
+          <li>
+            <a
+              href="https://docs.vast.ai/hosting/overview"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Vast.ai hosting docs</a
+            >
+            — official guide to listing your machine
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          <a href="../index.html">← All Methods</a> ·
+          <a
+            href="https://github.com/link-assistant/money-making-machines"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          · Public Domain (<a
+            href="https://unlicense.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Unlicense</a
+          >)
+        </p>
+      </div>
+    </footer>
+
+    <script type="module">
+      import { AutomationRunner, sleep, openUrl } from '../automation.js';
+
+      const steps = [
+        {
+          title: 'Check your hardware & electricity cost',
+          async run(runner) {
+            runner.log('Checking what you need before renting out compute…');
+            await sleep(800);
+            runner.log(
+              'Identify your GPU + VRAM: Windows → Task Manager → Performance → GPU; Linux → nvidia-smi.',
+              'dim'
+            );
+            await sleep(800);
+            runner.log(
+              'Look up your electricity price per kWh and subtract it from any earnings estimate.',
+              'warn'
+            );
+            await sleep(600);
+            runner.log(
+              'A modern high-VRAM card is worth it; an old low-VRAM card usually is not. ✓',
+              'info'
+            );
+          },
+        },
+        {
+          title: 'Open compute marketplaces',
+          async run(runner) {
+            runner.log('Opening GPU/compute marketplace websites…');
+            await sleep(600);
+            openUrl('https://salad.com');
+            runner.log('Opened: Salad (beginner-friendly)', 'info');
+            await sleep(400);
+            openUrl('https://vast.ai');
+            runner.log('Opened: Vast.ai (set your own price)', 'info');
+            await sleep(400);
+            openUrl('https://io.net');
+            runner.log('Opened: io.net (crypto payouts)', 'info');
+          },
+        },
+        {
+          title: 'Open setup docs',
+          async run(runner) {
+            runner.log('Opening host-client setup documentation…');
+            await sleep(600);
+            openUrl('https://docs.vast.ai/hosting/overview');
+            runner.log('Opened: Vast.ai hosting docs.', 'info');
+            await sleep(400);
+            runner.log(
+              'Salad / io.net: just install the desktop client and sign in — no CLI needed.',
+              'dim'
+            );
+          },
+        },
+        {
+          title: 'Open pricing guide',
+          async run(runner) {
+            runner.log('Opening pricing guidance…');
+            await sleep(600);
+            openUrl('https://cloud.vast.ai/host/setup');
+            runner.log(
+              'Set a competitive hourly price (the dashboard shows comparable GPUs).',
+              'info'
+            );
+            await sleep(600);
+            runner.log(
+              'Enable "Launch at startup" so your machine rejoins the pool after a reboot.',
+              'dim'
+            );
+          },
+        },
+        {
+          title: 'Monitor utilisation, temps & payouts',
+          async run(runner) {
+            runner.log('Opening your provider dashboard…');
+            await sleep(600);
+            openUrl('https://cloud.vast.ai/host/machines');
+            runner.log('Opened: Vast.ai host dashboard.', 'info');
+            await sleep(400);
+            runner.log(
+              'Watch utilisation and GPU temperature; withdraw once you pass the minimum.',
+              'dim'
+            );
+          },
+        },
+      ];
+
+      const runner = new AutomationRunner({
+        steps,
+        logEl: document.getElementById('automationLog'),
+        startBtn: document.getElementById('startBtn'),
+      });
+
+      document.getElementById('startBtn').addEventListener('click', () => {
+        runner.start();
+      });
+
+      document.querySelectorAll('[data-step-btn]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const index = parseInt(btn.dataset.stepBtn, 10);
+          runner.runStep(index);
+        });
+      });
+    </script>
+  </body>
+</html>
